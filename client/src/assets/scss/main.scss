@@ -1,7 +1,9 @@
 @import "./foundation/settings";
 @import "~foundation-sites/scss/foundation";
 @include foundation-everything;
-// place global css here
+
+@import url("https://fonts.googleapis.com/css2?family=Neucha&display=swap");
+
 *,
 *::before,
 *::after {
@@ -11,4 +13,19 @@
 :root {
   -moz-tab-size: 4;
   tab-size: 4;
+}
+
+$black: #080407;
+$white: #ececec;
+$grey: #a7a7a7;
+
+@import "./calculator";
+@import "./topBar";
+
+body {
+  background-image: url("../images/background.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center 20px;
+  font-family: 'Neucha', cursive;
 }
