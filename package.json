@@ -1,0 +1,22 @@
+{
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "server",
+    "client",
+    "e2e"
+  ],
+  "scripts": {
+    "build:client": "yarn workspace tihai-calculator-client build",
+    "dev": "yarn workspace tihai-calculator-server dev",
+    "dev:debug": "yarn workspace tihai-calculator-server dev:debug",
+    "heroku-postbuild": "yarn workspace tihai-calculator-client build",
+    "start": "yarn workspace tihai-calculator-server start",
+    "dev:cypress": "yarn workspace tihai-calculator-server dev:e2e",
+    "e2e:open": "yarn workspace tihai-calculator-e2e e2e:open",
+    "e2e:run": "yarn workspace tihai-calculator-e2e e2e:run"
+  },
+  "engines": {
+    "node": "^14.15"
+  }
+}
