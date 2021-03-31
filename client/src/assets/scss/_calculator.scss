@@ -1,0 +1,33 @@
+.button {
+  display: flex;
+  width: 2.2em;
+  height: 2.2em;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 2.5em;
+  background-color: $black;
+  color:$white;
+  border-radius: 50%;
+  margin: 10px;
+  padding: 0;
+}
+
+.calculator {
+  display: flex;
+  margin-left: 30px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.wrapper {
+  background-color: $white;
+  border-radius: 30px;
+  box-shadow: 0 0 4.5px 3px $grey;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+}
