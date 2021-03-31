@@ -3,6 +3,7 @@
 @include foundation-everything;
 
 @import url("https://fonts.googleapis.com/css2?family=Neucha&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600&display=swap');
 
 *,
 *::before,
@@ -15,9 +16,13 @@
   tab-size: 4;
 }
 
-$black: #080407;
 $white: #ececec;
 $grey: #a7a7a7;
+$dark-grey: #646464;
+$black: #080407;
+$green: #239423;
+$yellow: #cfdb22;
+$pink: #da346e;
 
 @import "./calculator";
 @import "./topBar";
@@ -27,5 +32,5 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center 20px;
-  font-family: 'Neucha', cursive;
+  font-family: "Neucha", cursive;
 }
