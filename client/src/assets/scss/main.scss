@@ -24,7 +24,8 @@ $green: #239423;
 $yellow: #cfdb22;
 $pink: #da346e;
 
-@import "./calculator";
+@import "./calcButtons";
+@import "./calcDisplay";
 @import "./topBar";
 
 body {
