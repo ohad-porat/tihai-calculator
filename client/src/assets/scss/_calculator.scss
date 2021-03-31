@@ -1,28 +1,32 @@
 .button {
   display: flex;
-  width: 2.2em;
-  height: 2.2em;
+  width: 1.8em;
+  height: 1.8em;
   flex: 1;
   justify-content: center;
   align-items: center;
   font-weight: bold;
   font-size: 2.5em;
   background-color: $black;
-  color:$white;
+  color: $white;
   border-radius: 50%;
   margin: 10px;
   padding: 0;
 }
 
+.button:hover {
+  background-color: $pink;
+}
+
 .calculator {
   display: flex;
-  margin-left: 30px;
-  margin-top: 20px;
+  margin: 20px 0 40px 40px;
   width: 100%;
 }
 
 .wrapper {
   background-color: $white;
+  padding: 20px;
   border-radius: 30px;
   box-shadow: 0 0 4.5px 3px $grey;
 }
@@ -30,4 +34,25 @@
 .row {
   display: flex;
   width: 100%;
+}
+
+.display {
+  display: flex;
+  height: 4em;
+  flex: 1;
+  background-color: $yellow;
+  color: $black;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  box-shadow: 0 0 0 2pt $black;
+  padding: 0.5em;
+  font-weight: bold;
+  font-size: 1.8em;
+  align-items: center;
+}
+
+.digit {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1em;
+  margin-bottom: 6px;
 }
