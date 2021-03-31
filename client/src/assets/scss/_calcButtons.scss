@@ -20,12 +20,13 @@
 
 .number-buttons-container {
   width: 13em;
+  margin: 0px;
+  float: left;
 }
 
 .calculator {
   display: flex;
   margin: 20px 0 40px 40px;
-  width: 100%;
 }
 
 .calc-container {

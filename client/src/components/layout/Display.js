@@ -2,7 +2,6 @@ import React from "react"
 
 const Display = (props) => {
   return (
-    <>
       <div className="display">
         <div className="data-container">
           <div className="data-item">
@@ -18,13 +17,12 @@ const Display = (props) => {
             S-&nbsp;&nbsp;
             <span className="digit">{props.data.subdivision}PIC</span>
           </div>
-        {/* <div className="display-line"></div>
-        </div> */}
-        {/* <div className="result">
+        </div>
+        {/* <div className="display-line"></div> */}
+        <div className="result">
           <span className="digit">1</span>
-        </div> */}
+        </div>
       </div>
-    </>
   )
 }
 

@@ -14,6 +14,8 @@
   flex-wrap: wrap;
   width: 16em;
   height: 6.5em;
+  margin: 0px;
+  float: left;
 }
 
 .data-item {
@@ -28,11 +30,13 @@
   font-size: 0.9em;
 }
 
-// .display-line {
-//   background-color: $black;
-//   width: 0.18em;
-// }
+.result {
+  float: left;
+  font-size: 4em;
+  margin-left: 30px;
+}
 
-// .result {
-
-// }
+.display-line {
+  background-color: $black;
+  width: 0.18em;
+}
