@@ -5,17 +5,17 @@ const Display = (props) => {
       <div className="display">
         <div className="data-container">
           <div className="data-item">
-            P-&nbsp;<span className="digit">{props.data.phrase}2</span>
+            P-&nbsp;<span className="digit">{props.data.phrase}</span>
           </div>
           <div className="data-item">
-            TS-&nbsp;<span className="digit">{props.data.timeSignature}4/4</span>
+            TS-&nbsp;<span className="digit">{props.data.timeSignature}</span>
           </div>
           <div className="data-item">
-            G-&nbsp;<span className="digit">{props.data.gap}3</span>
+            G-&nbsp;<span className="digit">{props.data.gap}</span>
           </div>
           <div className="data-item">
             S-&nbsp;&nbsp;
-            <span className="digit">{props.data.subdivision}PIC</span>
+            <span className="digit">{props.data.subdivision}</span>
           </div>
         </div>
         {/* <div className="display-line"></div> */}
