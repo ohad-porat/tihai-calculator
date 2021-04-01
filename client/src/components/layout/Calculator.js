@@ -21,13 +21,6 @@ const Calculator = () => {
     })
   }
 
-  const handleDelete = () => {
-    setData({
-      ...data,
-      phrase: data.phrase.slice(0, -1),
-    })
-  }
-
   const handleClear = () => {
     setData({
       phrase: "",
