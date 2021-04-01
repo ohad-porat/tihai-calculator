@@ -13,12 +13,17 @@ const Calculator = () => {
     gap: "",
     subdivision: "",
   })
+  const [selectedData, setSelectedData] = useState()
 
   const addToDisplay = (number) => {
     setData({
       ...data,
-      phrase: data.phrase + number,
+      [selectedData]: data[selectedData] + number,
     })
+  }
+
+  const handleSelectedData = (dataType) => {
+    setSelectedData(dataType)
   }
 
   const handleClear = () => {
@@ -37,12 +42,36 @@ const Calculator = () => {
           <Display data={data}></Display>
         </div>
         <div className="row">
-          <SelectTypeButton>Phrase</SelectTypeButton>
-          <SelectTypeButton>Time Signature</SelectTypeButton>
+          <SelectTypeButton
+            handleSelectedData={handleSelectedData}
+            selectedData={selectedData}
+            value="phrase"
+          >
+            Phrase
+          </SelectTypeButton>
+          <SelectTypeButton
+            handleSelectedData={handleSelectedData}
+            selectedData={selectedData}
+            value="timeSignature"
+          >
+            Time Signature
+          </SelectTypeButton>
         </div>
         <div className="row">
-          <SelectTypeButton>Gap</SelectTypeButton>
-          <SelectTypeButton>Subdivision</SelectTypeButton>
+          <SelectTypeButton
+            handleSelectedData={handleSelectedData}
+            selectedData={selectedData}
+            value="gap"
+          >
+            Gap
+          </SelectTypeButton>
+          <SelectTypeButton
+            handleSelectedData={handleSelectedData}
+            selectedData={selectedData}
+            value="subdivision"
+          >
+            Subdivision
+          </SelectTypeButton>
         </div>
         <div className="number-buttons-container">
           <div className="row">
