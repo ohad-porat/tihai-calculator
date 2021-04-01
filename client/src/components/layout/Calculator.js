@@ -68,7 +68,7 @@ const Calculator = () => {
             <Button addToDisplay={addToDisplay}>3</Button>
           </div>
           <div className="row">
-            <DeleteButton handleDelete={handleDelete}>D</DeleteButton>
+            <Button addToDisplay={addToDisplay}>/</Button>
             <Button addToDisplay={addToDisplay}>0</Button>
             <ClearButton handleClear={handleClear}>C</ClearButton>
           </div>
