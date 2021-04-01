@@ -1,0 +1,42 @@
+.display {
+  height: 6.5em;
+  width: 24em;
+  background-color: $yellow;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  box-shadow: 0 0 0 3px $black;
+  padding: 0.5em;
+  margin-bottom: 10px;
+}
+
+.data-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 16em;
+  height: 6.5em;
+  margin: 0px;
+  float: left;
+}
+
+.data-item {
+  color: $black;
+  font-weight: bold;
+  font-size: 1.6em;
+  width: 4.8em;
+}
+
+.digit {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.9em;
+}
+
+.result {
+  float: left;
+  font-size: 4em;
+  margin-left: 30px;
+}
+
+.display-line {
+  background-color: $black;
+  width: 0.18em;
+}

@@ -1,12 +1,12 @@
 .button {
   display: flex;
-  width: 1.8em;
-  height: 1.8em;
+  width: 1.2em;
+  height: 1.5em;
   flex: 1;
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  font-size: 2.5em;
+  font-size: 1.8em;
   background-color: $black;
   color: $white;
   border-radius: 50%;
@@ -18,13 +18,18 @@
   background-color: $pink;
 }
 
+.number-buttons-container {
+  width: 13em;
+  margin: 0px;
+  float: left;
+}
+
 .calculator {
   display: flex;
   margin: 20px 0 40px 40px;
-  width: 100%;
 }
 
-.wrapper {
+.calc-container {
   background-color: $white;
   padding: 20px;
   border-radius: 30px;
@@ -36,23 +41,10 @@
   width: 100%;
 }
 
-.display {
-  display: flex;
-  height: 4em;
-  flex: 1;
-  background-color: $yellow;
+.select-button {
+  font-size: 1.5em;
   color: $black;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  box-shadow: 0 0 0 2pt $black;
-  padding: 0.5em;
-  font-weight: bold;
-  font-size: 1.8em;
-  align-items: center;
-}
-
-.digit {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 1.1em;
-  margin-bottom: 6px;
+  background-color: $yellow;
+  border-radius: 20px;
+  box-shadow: 0 0 0 2px $black;
 }
