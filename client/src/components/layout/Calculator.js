@@ -2,9 +2,9 @@ import React, { useState } from "react"
 
 import Button from "./Button.js"
 import ClearButton from "./ClearButton.js"
-import DeleteButton from "./DeleteButton.js"
 import SelectTypeButton from "./SelectTypeButton.js"
 import Display from "./Display.js"
+import RhythmicUnitButton from "./RhythmicUnitButton.js"
 
 const Calculator = () => {
   const [data, setData] = useState({
@@ -94,6 +94,16 @@ const Calculator = () => {
             <Button addToDisplay={addToDisplay}>0</Button>
             <ClearButton handleClear={handleClear}>C</ClearButton>
           </div>
+        </div>
+        <div className="rhythmic-unit-container">
+          <RhythmicUnitButton>Quart</RhythmicUnitButton>
+          <RhythmicUnitButton>Eighth</RhythmicUnitButton>
+          <RhythmicUnitButton>Tuplets</RhythmicUnitButton>
+          <RhythmicUnitButton>Sixteen</RhythmicUnitButton>
+          <RhythmicUnitButton>Quintuplets</RhythmicUnitButton>
+          <RhythmicUnitButton>Sextuplets</RhythmicUnitButton>
+          <RhythmicUnitButton>Septuplets</RhythmicUnitButton>
+          <RhythmicUnitButton>ThirtyTwo</RhythmicUnitButton>
         </div>
       </div>
     </div>

@@ -48,3 +48,25 @@
   border-radius: 20px;
   box-shadow: 0 0 0 2px $black;
 }
+
+.rhythmic-unit {
+  font-size: 1.5em;
+  margin-right: 10px;
+  justify-content: center;
+  align-items: center;
+  color: $white;
+}
+
+.rhythmic-unit-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 10em;
+  float: left;
+  margin-left: 10px;
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+  background-color: $black;
+  padding: 9px 0;
+  border-radius: 30px;
+}
