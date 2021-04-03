@@ -16,9 +16,18 @@ const Calculator = () => {
   const [selectedData, setSelectedData] = useState()
 
   const addToDisplay = (number) => {
+    if (selectedData !== "subdivision") {
+      setData({
+        ...data,
+        [selectedData]: data[selectedData] + number,
+      })
+    }
+  }
+
+  const addSubdivision = (value) => {
     setData({
       ...data,
-      [selectedData]: data[selectedData] + number,
+      ["subdivision"]: value,
     })
   }
 
@@ -96,14 +105,62 @@ const Calculator = () => {
           </div>
         </div>
         <div className="rhythmic-unit-container">
-          <RhythmicUnitButton>Quart</RhythmicUnitButton>
-          <RhythmicUnitButton>Eighth</RhythmicUnitButton>
-          <RhythmicUnitButton>Tuplets</RhythmicUnitButton>
-          <RhythmicUnitButton>Sixteen</RhythmicUnitButton>
-          <RhythmicUnitButton>Quintuplets</RhythmicUnitButton>
-          <RhythmicUnitButton>Sextuplets</RhythmicUnitButton>
-          <RhythmicUnitButton>Septuplets</RhythmicUnitButton>
-          <RhythmicUnitButton>ThirtyTwo</RhythmicUnitButton>
+          <RhythmicUnitButton
+            addSubdivision={addSubdivision}
+            handleSelectedData={handleSelectedData}
+            value="1"
+          >
+            Quart
+          </RhythmicUnitButton>
+          <RhythmicUnitButton
+            addSubdivision={addSubdivision}
+            handleSelectedData={handleSelectedData}
+            value="2"
+          >
+            Eighth
+          </RhythmicUnitButton>
+          <RhythmicUnitButton
+            addSubdivision={addSubdivision}
+            handleSelectedData={handleSelectedData}
+            value="3"
+          >
+            Tuplets
+          </RhythmicUnitButton>
+          <RhythmicUnitButton
+            addSubdivision={addSubdivision}
+            handleSelectedData={handleSelectedData}
+            value="4"
+          >
+            Sixteen
+          </RhythmicUnitButton>
+          <RhythmicUnitButton
+            addSubdivision={addSubdivision}
+            handleSelectedData={handleSelectedData}
+            value="5"
+          >
+            Quintuplets
+          </RhythmicUnitButton>
+          <RhythmicUnitButton
+            addSubdivision={addSubdivision}
+            handleSelectedData={handleSelectedData}
+            value="6"
+          >
+            Sextuplets
+          </RhythmicUnitButton>
+          <RhythmicUnitButton
+            addSubdivision={addSubdivision}
+            handleSelectedData={handleSelectedData}
+            value="7"
+          >
+            Septuplets
+          </RhythmicUnitButton>
+          <RhythmicUnitButton
+            addSubdivision={addSubdivision}
+            handleSelectedData={handleSelectedData}
+            value="8"
+          >
+            ThirtyTwo
+          </RhythmicUnitButton>
         </div>
       </div>
     </div>

@@ -57,6 +57,11 @@
   color: $white;
 }
 
+.rhythmic-unit:hover {
+  cursor: pointer;
+  color: $pink;
+}
+
 .rhythmic-unit-container {
   display: flex;
   flex-wrap: wrap;
