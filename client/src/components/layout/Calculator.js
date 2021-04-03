@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 
 import Button from "./Button.js"
-import ClearButton from "./ClearButton.js"
+import DeleteButton from "./DeleteButton.js"
 import SelectTypeButton from "./SelectTypeButton.js"
 import Display from "./Display.js"
 import RhythmicUnitButton from "./RhythmicUnitButton.js"
@@ -35,12 +35,10 @@ const Calculator = () => {
     setSelectedData(dataType)
   }
 
-  const handleClear = () => {
+  const handleDelete = () => {
     setData({
-      phrase: "",
-      timeSignature: "",
-      gap: "",
-      subdivision: "",
+      ...data,
+      [selectedData]: data[selectedData].slice(0, -1),
     })
   }
 
@@ -101,7 +99,7 @@ const Calculator = () => {
           <div className="row">
             <Button addToDisplay={addToDisplay}>/</Button>
             <Button addToDisplay={addToDisplay}>0</Button>
-            <ClearButton handleClear={handleClear}>C</ClearButton>
+            <DeleteButton handleDelete={handleDelete}>Del</DeleteButton>
           </div>
         </div>
         <div className="rhythmic-unit-container">
