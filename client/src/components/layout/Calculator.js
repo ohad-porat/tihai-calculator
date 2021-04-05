@@ -1,5 +1,14 @@
 import React, { useState } from "react"
 
+import quarter from "../../assets/images/rhythmicUnits/Quarter.png"
+import eighth from "../../assets/images/rhythmicUnits/Eighth.png"
+import tuplet from "../../assets/images/rhythmicUnits/Tuplet.png"
+import sixteenth from "../../assets/images/rhythmicUnits/16th.png"
+import quintuplets from "../../assets/images/rhythmicUnits/Quintuplet.png"
+import sextuplets from "../../assets/images/rhythmicUnits/6tuplets.png"
+import septuplets from "../../assets/images/rhythmicUnits/Septuplets.png"
+import thirtyTwo from "../../assets/images/rhythmicUnits/32nd.png"
+
 import Button from "./Button.js"
 import DeleteButton from "./DeleteButton.js"
 import SelectTypeButton from "./SelectTypeButton.js"
@@ -107,58 +116,58 @@ const Calculator = () => {
             addSubdivision={addSubdivision}
             handleSelectedData={handleSelectedData}
             value="1"
-          >
-            Quart
-          </RhythmicUnitButton>
+            image={quarter}
+            unitName="quarter note"
+          ></RhythmicUnitButton>
           <RhythmicUnitButton
             addSubdivision={addSubdivision}
             handleSelectedData={handleSelectedData}
             value="2"
-          >
-            Eighth
-          </RhythmicUnitButton>
+            image={eighth}
+            unitName="eighth note"
+          ></RhythmicUnitButton>
           <RhythmicUnitButton
             addSubdivision={addSubdivision}
             handleSelectedData={handleSelectedData}
             value="3"
-          >
-            Tuplets
-          </RhythmicUnitButton>
+            image={tuplet}
+            unitName="tuplets"
+          ></RhythmicUnitButton>
           <RhythmicUnitButton
             addSubdivision={addSubdivision}
             handleSelectedData={handleSelectedData}
             value="4"
-          >
-            Sixteen
-          </RhythmicUnitButton>
+            image={sixteenth}
+            unitName="sixteenth note"
+          ></RhythmicUnitButton>
           <RhythmicUnitButton
             addSubdivision={addSubdivision}
             handleSelectedData={handleSelectedData}
             value="5"
-          >
-            Quintuplets
-          </RhythmicUnitButton>
+            image={quintuplets}
+            unitName="quintuplets"
+          ></RhythmicUnitButton>
           <RhythmicUnitButton
             addSubdivision={addSubdivision}
             handleSelectedData={handleSelectedData}
             value="6"
-          >
-            Sextuplets
-          </RhythmicUnitButton>
+            image={sextuplets}
+            unitName="sextuplets"
+          ></RhythmicUnitButton>
           <RhythmicUnitButton
             addSubdivision={addSubdivision}
             handleSelectedData={handleSelectedData}
             value="7"
-          >
-            Septuplets
-          </RhythmicUnitButton>
+            image={septuplets}
+            unitName="septuplets"
+          ></RhythmicUnitButton>
           <RhythmicUnitButton
             addSubdivision={addSubdivision}
             handleSelectedData={handleSelectedData}
             value="8"
-          >
-            ThirtyTwo
-          </RhythmicUnitButton>
+            image={thirtyTwo}
+            unitName="thirty-second note"
+          ></RhythmicUnitButton>
         </div>
       </div>
     </div>

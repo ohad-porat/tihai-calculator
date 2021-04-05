@@ -16,7 +16,11 @@ const SelectTypeButton = (props) => {
     classString = "button select-button"
   }
 
-  return <div className={classString} onClick={handleClickButton}>{props.children}</div>
+  return (
+    <div className={classString} onClick={handleClickButton}>
+      {props.children}
+    </div>
+  )
 }
 
 export default SelectTypeButton

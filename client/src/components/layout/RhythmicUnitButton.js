@@ -5,7 +5,11 @@ const RhythmicUnitButton = (props) => {
     props.handleSelectedData("subdivision")
     props.addSubdivision(props.value)
   }
-return <div className="rhythmic-unit" onClick={handleClickButton}>{props.children}</div>
+  return (
+    <div className={`rhythmic-unit ${props.value}`} onClick={handleClickButton}>
+      <img src={props.image} alt={props.unitName} />
+    </div>
+  )
 }
 
 export default RhythmicUnitButton
