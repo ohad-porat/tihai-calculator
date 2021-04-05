@@ -2,27 +2,26 @@ import React from "react"
 
 const Display = (props) => {
   return (
-      <div className="display">
-        <div className="data-container">
-          <div className="data-item">
-            P-&nbsp;<span className="digit">{props.data.phrase}</span>
-          </div>
-          <div className="data-item">
-            TS-&nbsp;<span className="digit">{props.data.timeSignature}</span>
-          </div>
-          <div className="data-item">
-            G-&nbsp;<span className="digit">{props.data.gap}</span>
-          </div>
-          <div className="data-item">
-            S-&nbsp;&nbsp;
-            <span className="digit">{props.data.subdivision}</span>
-          </div>
+    <div className="display">
+      <div className="data-container">
+        <div className="data-item">
+          P-&nbsp;<span className="digit">{props.data.phrase}</span>
         </div>
-        {/* <div className="display-line"></div> */}
-        <div className="result">
-          <span className="digit">1</span>
+        <div className="data-item">
+          TS-&nbsp;<span className="digit">{props.data.timeSignature}</span>
+        </div>
+        <div className="data-item">
+          G-&nbsp;<span className="digit">{props.data.gap}</span>
+        </div>
+        <div className="data-item subdivision-display">
+          S-&nbsp;&nbsp;
+          <img src={props.subdivision.image} alt={props.subdivision.unitName} />
         </div>
       </div>
+      <div className="result">
+        <span className="digit">1</span>
+      </div>
+    </div>
   )
 }
 

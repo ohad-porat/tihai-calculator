@@ -1,12 +1,12 @@
 import React, { useState } from "react"
 
-import quarter from "../../assets/images/rhythmicUnits/Quarter.png"
-import eighth from "../../assets/images/rhythmicUnits/Eighth.png"
-import tuplet from "../../assets/images/rhythmicUnits/Tuplet.png"
+import quarter from "../../assets/images/rhythmicUnits/quarter.png"
+import eighth from "../../assets/images/rhythmicUnits/eighth.png"
+import tuplet from "../../assets/images/rhythmicUnits/tuplets.png"
 import sixteenth from "../../assets/images/rhythmicUnits/16th.png"
-import quintuplets from "../../assets/images/rhythmicUnits/Quintuplet.png"
-import sextuplets from "../../assets/images/rhythmicUnits/6tuplets.png"
-import septuplets from "../../assets/images/rhythmicUnits/Septuplets.png"
+import quintuplets from "../../assets/images/rhythmicUnits/quintuplets.png"
+import sextuplets from "../../assets/images/rhythmicUnits/sextuplets.png"
+import septuplets from "../../assets/images/rhythmicUnits/septuplets.png"
 import thirtyTwo from "../../assets/images/rhythmicUnits/32nd.png"
 
 import Button from "./Button.js"
@@ -23,6 +23,10 @@ const Calculator = () => {
     subdivision: "",
   })
   const [selectedData, setSelectedData] = useState()
+  const [selectedSubdivision, setSelectedSubdivision] = useState({
+    unitName: "",
+    image: "",
+  })
 
   const addToDisplay = (number) => {
     if (selectedData !== "subdivision") {
@@ -44,6 +48,13 @@ const Calculator = () => {
     setSelectedData(dataType)
   }
 
+  const handleSelectedSubdivision = (unitName, image) => {
+    setSelectedSubdivision({
+      unitName: unitName,
+      image: image,
+    })
+  }
+
   const handleDelete = () => {
     setData({
       ...data,
@@ -55,7 +66,7 @@ const Calculator = () => {
     <div className="calculator">
       <div className="calc-container">
         <div className="row">
-          <Display data={data}></Display>
+          <Display data={data} subdivision={selectedSubdivision}></Display>
         </div>
         <div className="row">
           <SelectTypeButton
@@ -115,6 +126,8 @@ const Calculator = () => {
           <RhythmicUnitButton
             addSubdivision={addSubdivision}
             handleSelectedData={handleSelectedData}
+            handleSelectedSubdivision={handleSelectedSubdivision}
+            selectedSubdivision={selectedSubdivision}
             value="1"
             image={quarter}
             unitName="quarter note"
@@ -122,6 +135,8 @@ const Calculator = () => {
           <RhythmicUnitButton
             addSubdivision={addSubdivision}
             handleSelectedData={handleSelectedData}
+            handleSelectedSubdivision={handleSelectedSubdivision}
+            selectedSubdivision={selectedSubdivision}
             value="2"
             image={eighth}
             unitName="eighth note"
@@ -129,6 +144,8 @@ const Calculator = () => {
           <RhythmicUnitButton
             addSubdivision={addSubdivision}
             handleSelectedData={handleSelectedData}
+            handleSelectedSubdivision={handleSelectedSubdivision}
+            selectedSubdivision={selectedSubdivision}
             value="3"
             image={tuplet}
             unitName="tuplets"
@@ -136,6 +153,8 @@ const Calculator = () => {
           <RhythmicUnitButton
             addSubdivision={addSubdivision}
             handleSelectedData={handleSelectedData}
+            handleSelectedSubdivision={handleSelectedSubdivision}
+            selectedSubdivision={selectedSubdivision}
             value="4"
             image={sixteenth}
             unitName="sixteenth note"
@@ -143,6 +162,8 @@ const Calculator = () => {
           <RhythmicUnitButton
             addSubdivision={addSubdivision}
             handleSelectedData={handleSelectedData}
+            handleSelectedSubdivision={handleSelectedSubdivision}
+            selectedSubdivision={selectedSubdivision}
             value="5"
             image={quintuplets}
             unitName="quintuplets"
@@ -150,6 +171,8 @@ const Calculator = () => {
           <RhythmicUnitButton
             addSubdivision={addSubdivision}
             handleSelectedData={handleSelectedData}
+            handleSelectedSubdivision={handleSelectedSubdivision}
+            selectedSubdivision={selectedSubdivision}
             value="6"
             image={sextuplets}
             unitName="sextuplets"
@@ -157,6 +180,8 @@ const Calculator = () => {
           <RhythmicUnitButton
             addSubdivision={addSubdivision}
             handleSelectedData={handleSelectedData}
+            handleSelectedSubdivision={handleSelectedSubdivision}
+            selectedSubdivision={selectedSubdivision}
             value="7"
             image={septuplets}
             unitName="septuplets"
@@ -164,6 +189,8 @@ const Calculator = () => {
           <RhythmicUnitButton
             addSubdivision={addSubdivision}
             handleSelectedData={handleSelectedData}
+            handleSelectedSubdivision={handleSelectedSubdivision}
+            selectedSubdivision={selectedSubdivision}
             value="8"
             image={thirtyTwo}
             unitName="thirty-second note"

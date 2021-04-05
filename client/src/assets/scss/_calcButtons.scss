@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  font-size: 1.8em;
+  font-size: 2em;
   background-color: $black;
   color: $white;
   border-radius: 50%;
@@ -50,16 +50,17 @@
 }
 
 .rhythmic-unit {
-  font-size: 1.5em;
-  margin-right: 10px;
+  background-color: $white;
   justify-content: center;
   align-items: center;
-  background-color: $white;
+  border-radius: 20px;
+  padding: 1px 7px;
+  margin-bottom: 7px;
 }
 
 .rhythmic-unit:hover {
   cursor: pointer;
-  color: $pink;
+  background-color: $pink;
 }
 
 .rhythmic-unit-container {
@@ -72,6 +73,28 @@
   justify-content: center;
   align-items: center;
   background-color: $black;
-  padding: 9px 0;
   border-radius: 30px;
+}
+
+.quarter,
+.eighth,
+.tuplets,
+.sixteenth {
+  width: 40%;
+}
+
+.quarter,
+.tuplets {
+  margin-right: 10px;
+}
+
+.quarter {
+  margin-top: 10px;
+}
+
+.quintuplets,
+.sextuplets,
+.septuplets,
+.thirty-second {
+  width: 75%;
 }

@@ -9,15 +9,16 @@ const SelectTypeButton = (props) => {
     }
   }
 
-  let classString = "button select-button"
+  let highlightClass = ""
   if (props.selectedData === props.value) {
-    classString = "button select-button highlight-button"
-  } else {
-    classString = "button select-button"
+    highlightClass = "highlight-button"
   }
 
   return (
-    <div className={classString} onClick={handleClickButton}>
+    <div
+      className={`button select-button ${highlightClass}`}
+      onClick={handleClickButton}
+    >
       {props.children}
     </div>
   )
