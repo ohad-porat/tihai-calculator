@@ -9,44 +9,17 @@ import sextuplets from "../../assets/images/rhythmicUnits/sextuplets.png"
 import septuplets from "../../assets/images/rhythmicUnits/septuplets.png"
 import thirtyTwo from "../../assets/images/rhythmicUnits/32nd.png"
 
-import Button from "./Button.js"
+import NumberButton from "./NumberButton.js"
 import DeleteButton from "./DeleteButton.js"
 import SelectTypeButton from "./SelectTypeButton.js"
 import Display from "./Display.js"
 import RhythmicUnitButton from "./RhythmicUnitButton.js"
 
-const Calculator = () => {
-  const [data, setData] = useState({
-    phrase: "",
-    timeSignature: "",
-    gap: "",
-    subdivision: "",
-  })
-  const [selectedData, setSelectedData] = useState()
+const Calculator = (props) => {
   const [selectedSubdivision, setSelectedSubdivision] = useState({
     unitName: "",
     image: "",
   })
-
-  const addToDisplay = (number) => {
-    if (selectedData !== "subdivision") {
-      setData({
-        ...data,
-        [selectedData]: data[selectedData] + number,
-      })
-    }
-  }
-
-  const addSubdivision = (value) => {
-    setData({
-      ...data,
-      ["subdivision"]: value,
-    })
-  }
-
-  const handleSelectedData = (dataType) => {
-    setSelectedData(dataType)
-  }
 
   const handleSelectedSubdivision = (unitName, image) => {
     setSelectedSubdivision({
@@ -55,30 +28,27 @@ const Calculator = () => {
     })
   }
 
-  const handleDelete = () => {
-    setData({
-      ...data,
-      [selectedData]: data[selectedData].slice(0, -1),
-    })
-  }
-
   return (
     <div className="calculator">
       <div className="calc-container">
         <div className="row">
-          <Display data={data} subdivision={selectedSubdivision}></Display>
+          <Display
+            data={props.data}
+            subdivision={selectedSubdivision}
+            result={props.result}
+          ></Display>
         </div>
         <div className="row">
           <SelectTypeButton
-            handleSelectedData={handleSelectedData}
-            selectedData={selectedData}
+            handleSelectedData={props.handleSelectedData}
+            selectedData={props.selectedData}
             value="phrase"
           >
             Phrase
           </SelectTypeButton>
           <SelectTypeButton
-            handleSelectedData={handleSelectedData}
-            selectedData={selectedData}
+            handleSelectedData={props.handleSelectedData}
+            selectedData={props.selectedData}
             value="timeSignature"
           >
             Time Signature
@@ -86,15 +56,15 @@ const Calculator = () => {
         </div>
         <div className="row">
           <SelectTypeButton
-            handleSelectedData={handleSelectedData}
-            selectedData={selectedData}
+            handleSelectedData={props.handleSelectedData}
+            selectedData={props.selectedData}
             value="gap"
           >
             Gap
           </SelectTypeButton>
           <SelectTypeButton
-            handleSelectedData={handleSelectedData}
-            selectedData={selectedData}
+            handleSelectedData={props.handleSelectedData}
+            selectedData={props.selectedData}
             value="subdivision"
           >
             Subdivision
@@ -102,86 +72,86 @@ const Calculator = () => {
         </div>
         <div className="number-buttons-container">
           <div className="row">
-            <Button addToDisplay={addToDisplay}>7</Button>
-            <Button addToDisplay={addToDisplay}>8</Button>
-            <Button addToDisplay={addToDisplay}>9</Button>
+            <NumberButton addToDisplay={props.addToDisplay}>7</NumberButton>
+            <NumberButton addToDisplay={props.addToDisplay}>8</NumberButton>
+            <NumberButton addToDisplay={props.addToDisplay}>9</NumberButton>
           </div>
           <div className="row">
-            <Button addToDisplay={addToDisplay}>4</Button>
-            <Button addToDisplay={addToDisplay}>5</Button>
-            <Button addToDisplay={addToDisplay}>6</Button>
+            <NumberButton addToDisplay={props.addToDisplay}>4</NumberButton>
+            <NumberButton addToDisplay={props.addToDisplay}>5</NumberButton>
+            <NumberButton addToDisplay={props.addToDisplay}>6</NumberButton>
           </div>
           <div className="row">
-            <Button addToDisplay={addToDisplay}>1</Button>
-            <Button addToDisplay={addToDisplay}>2</Button>
-            <Button addToDisplay={addToDisplay}>3</Button>
+            <NumberButton addToDisplay={props.addToDisplay}>1</NumberButton>
+            <NumberButton addToDisplay={props.addToDisplay}>2</NumberButton>
+            <NumberButton addToDisplay={props.addToDisplay}>3</NumberButton>
           </div>
           <div className="row">
-            <Button addToDisplay={addToDisplay}>/</Button>
-            <Button addToDisplay={addToDisplay}>0</Button>
-            <DeleteButton handleDelete={handleDelete}>Del</DeleteButton>
+            <NumberButton addToDisplay={props.addToDisplay}>/</NumberButton>
+            <NumberButton addToDisplay={props.addToDisplay}>0</NumberButton>
+            <DeleteButton handleDelete={props.handleDelete}>Del</DeleteButton>
           </div>
         </div>
         <div className="rhythmic-unit-container">
           <RhythmicUnitButton
-            addSubdivision={addSubdivision}
-            handleSelectedData={handleSelectedData}
+            addSubdivision={props.addSubdivision}
+            handleSelectedData={props.handleSelectedData}
             handleSelectedSubdivision={handleSelectedSubdivision}
             value="1"
             image={quarter}
             unitName="quarter note"
           ></RhythmicUnitButton>
           <RhythmicUnitButton
-            addSubdivision={addSubdivision}
-            handleSelectedData={handleSelectedData}
+            addSubdivision={props.addSubdivision}
+            handleSelectedData={props.handleSelectedData}
             handleSelectedSubdivision={handleSelectedSubdivision}
             value="2"
             image={eighth}
             unitName="eighth note"
           ></RhythmicUnitButton>
           <RhythmicUnitButton
-            addSubdivision={addSubdivision}
-            handleSelectedData={handleSelectedData}
+            addSubdivision={props.addSubdivision}
+            handleSelectedData={props.handleSelectedData}
             handleSelectedSubdivision={handleSelectedSubdivision}
             value="3"
             image={tuplet}
             unitName="tuplets"
           ></RhythmicUnitButton>
           <RhythmicUnitButton
-            addSubdivision={addSubdivision}
-            handleSelectedData={handleSelectedData}
+            addSubdivision={props.addSubdivision}
+            handleSelectedData={props.handleSelectedData}
             handleSelectedSubdivision={handleSelectedSubdivision}
             value="4"
             image={sixteenth}
             unitName="sixteenth note"
           ></RhythmicUnitButton>
           <RhythmicUnitButton
-            addSubdivision={addSubdivision}
-            handleSelectedData={handleSelectedData}
+            addSubdivision={props.addSubdivision}
+            handleSelectedData={props.handleSelectedData}
             handleSelectedSubdivision={handleSelectedSubdivision}
             value="5"
             image={quintuplets}
             unitName="quintuplets"
           ></RhythmicUnitButton>
           <RhythmicUnitButton
-            addSubdivision={addSubdivision}
-            handleSelectedData={handleSelectedData}
+            addSubdivision={props.addSubdivision}
+            handleSelectedData={props.handleSelectedData}
             handleSelectedSubdivision={handleSelectedSubdivision}
             value="6"
             image={sextuplets}
             unitName="sextuplets"
           ></RhythmicUnitButton>
           <RhythmicUnitButton
-            addSubdivision={addSubdivision}
-            handleSelectedData={handleSelectedData}
+            addSubdivision={props.addSubdivision}
+            handleSelectedData={props.handleSelectedData}
             handleSelectedSubdivision={handleSelectedSubdivision}
             value="7"
             image={septuplets}
             unitName="septuplets"
           ></RhythmicUnitButton>
           <RhythmicUnitButton
-            addSubdivision={addSubdivision}
-            handleSelectedData={handleSelectedData}
+            addSubdivision={props.addSubdivision}
+            handleSelectedData={props.handleSelectedData}
             handleSelectedSubdivision={handleSelectedSubdivision}
             value="8"
             image={thirtyTwo}

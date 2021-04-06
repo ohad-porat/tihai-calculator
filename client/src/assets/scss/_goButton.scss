@@ -1,0 +1,26 @@
+.go-button {
+  font-size: 80px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 7px;
+  color: $black;
+}
+
+.go-button:hover {
+  color: $yellow;
+}
+
+.go-button-container {
+  margin-left: 80px;
+  margin-top: 50px;
+  background-color: $pink;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 0 4px $black;
+}
+
+.go-button-container:hover {
+  box-shadow: 0 0 0 4px $yellow;
+}
