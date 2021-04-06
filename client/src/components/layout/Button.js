@@ -5,7 +5,11 @@ const Button = (props) => {
     props.addToDisplay(props.children)
   }
 
-  return <div className="button" onClick={handleClickButton}>{props.children}</div>
+  return (
+    <div className="button" onClick={handleClickButton}>
+      {props.children}
+    </div>
+  )
 }
 
 export default Button

@@ -24,9 +24,10 @@ $green: #239423;
 $yellow: #cfdb22;
 $pink: #da346e;
 
+@import "./topBar";
 @import "./calcButtons";
 @import "./calcDisplay";
-@import "./topBar";
+@import "./rhythmicUnit";
 
 body {
   background-image: url("../images/background.jpeg");

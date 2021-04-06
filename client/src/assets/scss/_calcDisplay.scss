@@ -26,14 +26,14 @@
 }
 
 .digit {
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
   font-size: 0.9em;
 }
 
 .result {
   float: left;
   font-size: 4em;
-  margin-left: 30px;
+  margin-left: 40px;
 }
 
 .display-line {
@@ -44,4 +44,49 @@
 .highlight-button {
   background-color: $pink;
   color: $white;
+}
+
+.subdivision-display {
+  position: relative;
+}
+
+.subdivision-display.quarter {
+  margin-top: 0;
+  right: 12px;
+  bottom: 2px;
+}
+
+.subdivision-display.eighth {
+  margin-top: 0;
+  right: 8px;
+  bottom: 2px;
+}
+
+.subdivision-display.tuplets {
+  right: 2px;
+  bottom: 4px;
+}
+
+.subdivision-display.sixteenth {
+  left: 5px;
+  bottom: 1px;
+}
+
+.subdivision-display.quintuplets {
+  right: 11px;
+  bottom: 5px;
+}
+
+.subdivision-display.sextuplets {
+  right: 6px;
+  bottom: 4px;
+}
+
+.subdivision-display.septuplets {
+  bottom: 4px;
+}
+
+.subdivision-display.thirty-second {
+  left: 5px;
+  bottom: 1px;
 }

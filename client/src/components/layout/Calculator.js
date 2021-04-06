@@ -1,10 +1,19 @@
 import React, { useState } from "react"
 
+import quarter from "../../assets/images/rhythmicUnits/quarter.png"
+import eighth from "../../assets/images/rhythmicUnits/eighth.png"
+import tuplet from "../../assets/images/rhythmicUnits/tuplets.png"
+import sixteenth from "../../assets/images/rhythmicUnits/16th.png"
+import quintuplets from "../../assets/images/rhythmicUnits/quintuplets.png"
+import sextuplets from "../../assets/images/rhythmicUnits/sextuplets.png"
+import septuplets from "../../assets/images/rhythmicUnits/septuplets.png"
+import thirtyTwo from "../../assets/images/rhythmicUnits/32nd.png"
+
 import Button from "./Button.js"
-import ClearButton from "./ClearButton.js"
 import DeleteButton from "./DeleteButton.js"
 import SelectTypeButton from "./SelectTypeButton.js"
 import Display from "./Display.js"
+import RhythmicUnitButton from "./RhythmicUnitButton.js"
 
 const Calculator = () => {
   const [data, setData] = useState({
@@ -14,11 +23,24 @@ const Calculator = () => {
     subdivision: "",
   })
   const [selectedData, setSelectedData] = useState()
+  const [selectedSubdivision, setSelectedSubdivision] = useState({
+    unitName: "",
+    image: "",
+  })
 
   const addToDisplay = (number) => {
+    if (selectedData !== "subdivision") {
+      setData({
+        ...data,
+        [selectedData]: data[selectedData] + number,
+      })
+    }
+  }
+
+  const addSubdivision = (value) => {
     setData({
       ...data,
-      [selectedData]: data[selectedData] + number,
+      ["subdivision"]: value,
     })
   }
 
@@ -26,12 +48,17 @@ const Calculator = () => {
     setSelectedData(dataType)
   }
 
-  const handleClear = () => {
+  const handleSelectedSubdivision = (unitName, image) => {
+    setSelectedSubdivision({
+      unitName: unitName,
+      image: image,
+    })
+  }
+
+  const handleDelete = () => {
     setData({
-      phrase: "",
-      timeSignature: "",
-      gap: "",
-      subdivision: "",
+      ...data,
+      [selectedData]: data[selectedData].slice(0, -1),
     })
   }
 
@@ -39,7 +66,7 @@ const Calculator = () => {
     <div className="calculator">
       <div className="calc-container">
         <div className="row">
-          <Display data={data}></Display>
+          <Display data={data} subdivision={selectedSubdivision}></Display>
         </div>
         <div className="row">
           <SelectTypeButton
@@ -92,8 +119,74 @@ const Calculator = () => {
           <div className="row">
             <Button addToDisplay={addToDisplay}>/</Button>
             <Button addToDisplay={addToDisplay}>0</Button>
-            <ClearButton handleClear={handleClear}>C</ClearButton>
+            <DeleteButton handleDelete={handleDelete}>Del</DeleteButton>
           </div>
+        </div>
+        <div className="rhythmic-unit-container">
+          <RhythmicUnitButton
+            addSubdivision={addSubdivision}
+            handleSelectedData={handleSelectedData}
+            handleSelectedSubdivision={handleSelectedSubdivision}
+            value="1"
+            image={quarter}
+            unitName="quarter note"
+          ></RhythmicUnitButton>
+          <RhythmicUnitButton
+            addSubdivision={addSubdivision}
+            handleSelectedData={handleSelectedData}
+            handleSelectedSubdivision={handleSelectedSubdivision}
+            value="2"
+            image={eighth}
+            unitName="eighth note"
+          ></RhythmicUnitButton>
+          <RhythmicUnitButton
+            addSubdivision={addSubdivision}
+            handleSelectedData={handleSelectedData}
+            handleSelectedSubdivision={handleSelectedSubdivision}
+            value="3"
+            image={tuplet}
+            unitName="tuplets"
+          ></RhythmicUnitButton>
+          <RhythmicUnitButton
+            addSubdivision={addSubdivision}
+            handleSelectedData={handleSelectedData}
+            handleSelectedSubdivision={handleSelectedSubdivision}
+            value="4"
+            image={sixteenth}
+            unitName="sixteenth note"
+          ></RhythmicUnitButton>
+          <RhythmicUnitButton
+            addSubdivision={addSubdivision}
+            handleSelectedData={handleSelectedData}
+            handleSelectedSubdivision={handleSelectedSubdivision}
+            value="5"
+            image={quintuplets}
+            unitName="quintuplets"
+          ></RhythmicUnitButton>
+          <RhythmicUnitButton
+            addSubdivision={addSubdivision}
+            handleSelectedData={handleSelectedData}
+            handleSelectedSubdivision={handleSelectedSubdivision}
+            value="6"
+            image={sextuplets}
+            unitName="sextuplets"
+          ></RhythmicUnitButton>
+          <RhythmicUnitButton
+            addSubdivision={addSubdivision}
+            handleSelectedData={handleSelectedData}
+            handleSelectedSubdivision={handleSelectedSubdivision}
+            value="7"
+            image={septuplets}
+            unitName="septuplets"
+          ></RhythmicUnitButton>
+          <RhythmicUnitButton
+            addSubdivision={addSubdivision}
+            handleSelectedData={handleSelectedData}
+            handleSelectedSubdivision={handleSelectedSubdivision}
+            value="8"
+            image={thirtyTwo}
+            unitName="thirty-second note"
+          ></RhythmicUnitButton>
         </div>
       </div>
     </div>
