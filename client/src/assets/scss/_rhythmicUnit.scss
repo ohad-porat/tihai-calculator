@@ -5,6 +5,11 @@
   border-radius: 20px;
   padding: 1px 7px;
   margin-bottom: 7px;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+    transition-property: background-color, color;
+    transition-duration: 0.25s, 0.25s;
+    transition-timing-function: ease-out, ease-out;
+    transition-delay: 0s, 0s;
 }
 
 .rhythmic-unit:hover {
