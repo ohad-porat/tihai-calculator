@@ -43,3 +43,10 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
+
+.calc-container {
+  background-color: $white;
+  padding: 20px;
+  border-radius: 30px;
+  box-shadow: 0 0 4.5px 3px $grey;
+}
