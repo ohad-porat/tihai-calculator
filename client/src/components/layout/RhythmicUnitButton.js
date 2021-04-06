@@ -7,14 +7,9 @@ const RhythmicUnitButton = (props) => {
     props.addSubdivision(props.value)
   }
 
-  let highlightClass = ""
-  if (props.selectedSubdivision.unitName === props.unitName) {
-    highlightClass = "highlight-button"
-  }
-
   return (
     <div
-      className={`rhythmic-unit ${props.unitName} ${highlightClass}`}
+      className={`rhythmic-unit ${props.unitName}`}
       onClick={handleClickButton}
     >
       <img src={props.image} alt={props.unitName} />

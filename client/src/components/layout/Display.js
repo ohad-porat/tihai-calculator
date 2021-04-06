@@ -13,9 +13,9 @@ const Display = (props) => {
         <div className="data-item">
           G-&nbsp;<span className="digit">{props.data.gap}</span>
         </div>
-        <div className="data-item subdivision-display">
-          S-&nbsp;&nbsp;
-          <img src={props.subdivision.image} alt={props.subdivision.unitName} />
+        <div className={"data-item"}>
+          S-
+          <img src={props.subdivision.image} alt={props.subdivision.unitName} className={`subdivision-display ${props.subdivision.unitName}`} />
         </div>
       </div>
       <div className="result">

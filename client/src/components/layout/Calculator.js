@@ -127,7 +127,6 @@ const Calculator = () => {
             addSubdivision={addSubdivision}
             handleSelectedData={handleSelectedData}
             handleSelectedSubdivision={handleSelectedSubdivision}
-            selectedSubdivision={selectedSubdivision}
             value="1"
             image={quarter}
             unitName="quarter note"
@@ -136,7 +135,6 @@ const Calculator = () => {
             addSubdivision={addSubdivision}
             handleSelectedData={handleSelectedData}
             handleSelectedSubdivision={handleSelectedSubdivision}
-            selectedSubdivision={selectedSubdivision}
             value="2"
             image={eighth}
             unitName="eighth note"
@@ -145,7 +143,6 @@ const Calculator = () => {
             addSubdivision={addSubdivision}
             handleSelectedData={handleSelectedData}
             handleSelectedSubdivision={handleSelectedSubdivision}
-            selectedSubdivision={selectedSubdivision}
             value="3"
             image={tuplet}
             unitName="tuplets"
@@ -154,7 +151,6 @@ const Calculator = () => {
             addSubdivision={addSubdivision}
             handleSelectedData={handleSelectedData}
             handleSelectedSubdivision={handleSelectedSubdivision}
-            selectedSubdivision={selectedSubdivision}
             value="4"
             image={sixteenth}
             unitName="sixteenth note"
@@ -163,7 +159,6 @@ const Calculator = () => {
             addSubdivision={addSubdivision}
             handleSelectedData={handleSelectedData}
             handleSelectedSubdivision={handleSelectedSubdivision}
-            selectedSubdivision={selectedSubdivision}
             value="5"
             image={quintuplets}
             unitName="quintuplets"
@@ -172,7 +167,6 @@ const Calculator = () => {
             addSubdivision={addSubdivision}
             handleSelectedData={handleSelectedData}
             handleSelectedSubdivision={handleSelectedSubdivision}
-            selectedSubdivision={selectedSubdivision}
             value="6"
             image={sextuplets}
             unitName="sextuplets"
@@ -181,7 +175,6 @@ const Calculator = () => {
             addSubdivision={addSubdivision}
             handleSelectedData={handleSelectedData}
             handleSelectedSubdivision={handleSelectedSubdivision}
-            selectedSubdivision={selectedSubdivision}
             value="7"
             image={septuplets}
             unitName="septuplets"
@@ -190,7 +183,6 @@ const Calculator = () => {
             addSubdivision={addSubdivision}
             handleSelectedData={handleSelectedData}
             handleSelectedSubdivision={handleSelectedSubdivision}
-            selectedSubdivision={selectedSubdivision}
             value="8"
             image={thirtyTwo}
             unitName="thirty-second note"
