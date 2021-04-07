@@ -19,7 +19,7 @@ const Display = (props) => {
         </div>
       </div>
       <div className="result">
-        <span className="digit">1</span>
+        <span className="digit">{props.result}</span>
       </div>
     </div>
   )

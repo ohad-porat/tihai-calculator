@@ -28,11 +28,26 @@ $pink: #da346e;
 @import "./calcButtons";
 @import "./calcDisplay";
 @import "./rhythmicUnit";
+@import "./subdivisionDisplay";
+@import "./goButton";
+@import "./clearButton";
 
 body {
-  background-image: url("../images/background.jpeg");
+  background-image: url("../images/bg.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center 20px;
   font-family: "Neucha", cursive;
+}
+
+.landing-page {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.calc-container {
+  background-color: $white;
+  padding: 20px;
+  border-radius: 30px;
+  box-shadow: 0 0 4.5px 3px $grey;
 }
