@@ -16,25 +16,13 @@ import Display from "./Display.js"
 import RhythmicUnitButton from "./RhythmicUnitButton.js"
 
 const Calculator = (props) => {
-  const [selectedSubdivision, setSelectedSubdivision] = useState({
-    unitName: "",
-    image: "",
-  })
-
-  const handleSelectedSubdivision = (unitName, image) => {
-    setSelectedSubdivision({
-      unitName: unitName,
-      image: image,
-    })
-  }
-
   return (
     <div className="calculator">
       <div className="calc-container">
         <div className="row">
           <Display
             data={props.data}
-            subdivision={selectedSubdivision}
+            subdivision={props.selectedSubdivision}
             result={props.result}
           ></Display>
         </div>
@@ -96,7 +84,7 @@ const Calculator = (props) => {
           <RhythmicUnitButton
             addSubdivision={props.addSubdivision}
             handleSelectedData={props.handleSelectedData}
-            handleSelectedSubdivision={handleSelectedSubdivision}
+            handleSelectedSubdivision={props.handleSelectedSubdivision}
             value="1"
             image={quarter}
             unitName="quarter note"
@@ -104,7 +92,7 @@ const Calculator = (props) => {
           <RhythmicUnitButton
             addSubdivision={props.addSubdivision}
             handleSelectedData={props.handleSelectedData}
-            handleSelectedSubdivision={handleSelectedSubdivision}
+            handleSelectedSubdivision={props.handleSelectedSubdivision}
             value="2"
             image={eighth}
             unitName="eighth note"
@@ -112,7 +100,7 @@ const Calculator = (props) => {
           <RhythmicUnitButton
             addSubdivision={props.addSubdivision}
             handleSelectedData={props.handleSelectedData}
-            handleSelectedSubdivision={handleSelectedSubdivision}
+            handleSelectedSubdivision={props.handleSelectedSubdivision}
             value="3"
             image={tuplet}
             unitName="tuplets"
@@ -120,7 +108,7 @@ const Calculator = (props) => {
           <RhythmicUnitButton
             addSubdivision={props.addSubdivision}
             handleSelectedData={props.handleSelectedData}
-            handleSelectedSubdivision={handleSelectedSubdivision}
+            handleSelectedSubdivision={props.handleSelectedSubdivision}
             value="4"
             image={sixteenth}
             unitName="sixteenth note"
@@ -128,7 +116,7 @@ const Calculator = (props) => {
           <RhythmicUnitButton
             addSubdivision={props.addSubdivision}
             handleSelectedData={props.handleSelectedData}
-            handleSelectedSubdivision={handleSelectedSubdivision}
+            handleSelectedSubdivision={props.handleSelectedSubdivision}
             value="5"
             image={quintuplets}
             unitName="quintuplets"
@@ -136,7 +124,7 @@ const Calculator = (props) => {
           <RhythmicUnitButton
             addSubdivision={props.addSubdivision}
             handleSelectedData={props.handleSelectedData}
-            handleSelectedSubdivision={handleSelectedSubdivision}
+            handleSelectedSubdivision={props.handleSelectedSubdivision}
             value="6"
             image={sextuplets}
             unitName="sextuplets"
@@ -144,7 +132,7 @@ const Calculator = (props) => {
           <RhythmicUnitButton
             addSubdivision={props.addSubdivision}
             handleSelectedData={props.handleSelectedData}
-            handleSelectedSubdivision={handleSelectedSubdivision}
+            handleSelectedSubdivision={props.handleSelectedSubdivision}
             value="7"
             image={septuplets}
             unitName="septuplets"
@@ -152,7 +140,7 @@ const Calculator = (props) => {
           <RhythmicUnitButton
             addSubdivision={props.addSubdivision}
             handleSelectedData={props.handleSelectedData}
-            handleSelectedSubdivision={handleSelectedSubdivision}
+            handleSelectedSubdivision={props.handleSelectedSubdivision}
             value="8"
             image={thirtyTwo}
             unitName="thirty-second note"

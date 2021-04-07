@@ -4,6 +4,7 @@
   text-align: center;
   margin-top: 7px;
   color: $black;
+  transition: color 0.25s ease-out;
 }
 
 .go-button:hover {
@@ -19,6 +20,7 @@
   border-radius: 50%;
   cursor: pointer;
   box-shadow: 0 0 0 4px $black;
+  transition: box-shadow 0.25s ease-out;
 }
 
 .go-button-container:hover {
