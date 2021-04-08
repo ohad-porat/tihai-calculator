@@ -18,8 +18,8 @@ const Display = (props) => {
           <img src={props.subdivision.image} alt={props.subdivision.unitName} className={`subdivision-display ${props.subdivision.unitName}`} />
         </div>
       </div>
-      <div className="result">
-        <span className="digit">{props.result}</span>
+      <div className="starting-beat">
+        <span className="digit">{props.tihaiStartingBeat}</span>
       </div>
     </div>
   )
