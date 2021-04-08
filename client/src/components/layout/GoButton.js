@@ -30,19 +30,3 @@ const GoButton = (props) => {
 }
 
 export default GoButton
-
-// unitInBeat = subdivisionValue / timeSignatureDown
-// beatsInBar = timeSignatureUp * unitInBeat
-
-// const getTihaiStartingBeat = () => {
-//   const length = phrase * 3 + gap * 2
-//   const adapter = subdivision / timeSignatureDown
-//   const beatsInBar = timeSignatureUp * subdivision
-//   const remainder = length % beatsInBar
-//   startAtBeat = (beatsInBar - remainder + 1) % beatsInBar
-//   if (startAtBeat === 0) {
-//     startAtBeat = beatsInBar
-//   }
-
-//   props.handleStartingBeat(startAtBeat / adapter / subdivision)
-// }
