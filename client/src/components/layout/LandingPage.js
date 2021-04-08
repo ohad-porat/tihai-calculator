@@ -60,6 +60,11 @@ const LandingPage = () => {
         unitName: "",
         image: "",
       })
+
+      setData({
+        ...data,
+        [selectedData]: "",
+      })
     }
   }
 
