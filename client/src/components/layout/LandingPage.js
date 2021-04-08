@@ -16,42 +16,38 @@ const LandingPage = () => {
     unitName: "",
     image: "",
   })
-  const [result, setResult] = useState()
-  
+  const [tihaiStartingBeat, setTihaiStartingBeat] = useState()
+
   const addToDisplay = (number) => {
     if (
       selectedData === "phrase" ||
       selectedData === "timeSignature" ||
       selectedData === "gap"
-      ) {
-        setData({
-          ...data,
-          [selectedData]: data[selectedData] + number,
-        })
-      }
-    }
-    
-    const addSubdivision = (value) => {
+    ) {
       setData({
         ...data,
-        ["subdivision"]: value,
+        [selectedData]: data[selectedData] + number,
       })
     }
-    
-    const handleSelectedData = (dataType) => {
-      setSelectedData(dataType)
-    }
-    
-      const handleSelectedSubdivision = (unitName, image) => {
-        setSelectedSubdivision({
-          unitName: unitName,
-          image: image,
-        })
-      }
-    
-    const handleResult = (outcome) => {
-      setResult(outcome)
-    }
+  }
+
+  const addSubdivision = (value) => {
+    setData({
+      ...data,
+      ["subdivision"]: value,
+    })
+  }
+
+  const handleSelectedData = (dataType) => {
+    setSelectedData(dataType)
+  }
+
+  const handleSelectedSubdivision = (unitName, image) => {
+    setSelectedSubdivision({
+      unitName: unitName,
+      image: image,
+    })
+  }
 
   const handleDelete = () => {
     setData({
@@ -80,7 +76,11 @@ const LandingPage = () => {
       image: "",
     })
 
-    setResult()
+    setTihaiStartingBeat()
+  }
+
+  const handleStartingBeat = (startAtBeat) => {
+    setTihaiStartingBeat(startAtBeat)
   }
 
   return (
@@ -93,10 +93,10 @@ const LandingPage = () => {
         selectedSubdivision={selectedSubdivision}
         handleSelectedSubdivision={handleSelectedSubdivision}
         handleDelete={handleDelete}
-        result={result}
+        tihaiStartingBeat={tihaiStartingBeat}
         data={data}
       />
-      <GoButton data={data} handleResult={handleResult} />
+      <GoButton data={data} handleStartingBeat={handleStartingBeat} />
       <ClearButton handleClear={handleClear} />
     </div>
   )
