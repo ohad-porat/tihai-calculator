@@ -2,6 +2,7 @@ import React, { useState } from "react"
 
 import Calculator from "./Calculator.js"
 import GoButton from "./GoButton.js"
+import ClearButton from "./ClearButton.js"
 
 const LandingPage = () => {
   const [data, setData] = useState({
@@ -11,6 +12,10 @@ const LandingPage = () => {
     subdivision: "",
   })
   const [selectedData, setSelectedData] = useState()
+  const [selectedSubdivision, setSelectedSubdivision] = useState({
+    unitName: "",
+    image: "",
+  })
   const [tihaiStartingBeat, setTihaiStartingBeat] = useState()
 
   const addToDisplay = (number) => {
@@ -33,15 +38,43 @@ const LandingPage = () => {
     })
   }
 
+  const handleSelectedData = (dataType) => {
+    setSelectedData(dataType)
+  }
+
+  const handleSelectedSubdivision = (unitName, image) => {
+    setSelectedSubdivision({
+      unitName: unitName,
+      image: image,
+    })
+  }
+
   const handleDelete = () => {
     setData({
       ...data,
       [selectedData]: data[selectedData].slice(0, -1),
     })
+
+    if (selectedData === "subdivision") {
+      setSelectedSubdivision({
+        unitName: "",
+        image: "",
+      })
+    }
   }
 
-  const handleSelectedData = (dataType) => {
-    setSelectedData(dataType)
+  const handleClear = () => {
+    setData({
+      phrase: "",
+      timeSignature: "",
+      gap: "",
+      subdivision: "",
+    })
+
+    setSelectedSubdivision({
+      unitName: "",
+      image: "",
+    })
   }
 
   const handleStartingBeat = (startAtBeat) => {
@@ -53,13 +86,16 @@ const LandingPage = () => {
       <Calculator
         addToDisplay={addToDisplay}
         addSubdivision={addSubdivision}
-        handleDelete={handleDelete}
         selectedData={selectedData}
         handleSelectedData={handleSelectedData}
+        selectedSubdivision={selectedSubdivision}
+        handleSelectedSubdivision={handleSelectedSubdivision}
+        handleDelete={handleDelete}
         tihaiStartingBeat={tihaiStartingBeat}
         data={data}
       />
       <GoButton data={data} handleStartingBeat={handleStartingBeat} />
+      <ClearButton handleClear={handleClear} />
     </div>
   )
 }
