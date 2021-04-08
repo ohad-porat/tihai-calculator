@@ -75,6 +75,8 @@ const LandingPage = () => {
       unitName: "",
       image: "",
     })
+
+    setTihaiStartingBeat()
   }
 
   const handleStartingBeat = (startAtBeat) => {

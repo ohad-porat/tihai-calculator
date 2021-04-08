@@ -8,18 +8,16 @@ const GoButton = (props) => {
   const timeSignatureDown = parseInt(timeSignature[1])
   const subdivisionValue = parseInt(props.data.subdivision)
 
-  let startAtBeat
-
   const getTihaiStartingBeat = () => {
     const length = phrase * 3 + gap * 2
     const unitInBeat = subdivisionValue / timeSignatureDown
-    const beatsInBar = timeSignatureUp * unitInBeat
-    const remainder = length % beatsInBar
-    let tihaiStartingBeat = beatsInBar - remainder + 1
+    const unitsInBar = timeSignatureUp * unitInBeat
+    const remainder = length % unitsInBar
+    let tihaiStartingBeat = unitsInBar - remainder + 1
+
     if (remainder === 0) {
       tihaiStartingBeat = 1
     }
-    // debugger
 
     props.handleStartingBeat(tihaiStartingBeat)
   }
