@@ -11,7 +11,7 @@ const LandingPage = () => {
     subdivision: "",
   })
   const [selectedData, setSelectedData] = useState()
-  const [result, setResult] = useState()
+  const [tihaiStartingBeat, setTihaiStartingBeat] = useState()
 
   const addToDisplay = (number) => {
     if (
@@ -44,8 +44,8 @@ const LandingPage = () => {
     setSelectedData(dataType)
   }
 
-  const handleResult = (outcome) => {
-    setResult(outcome)
+  const handleStartingBeat = (startAtBeat) => {
+    setTihaiStartingBeat(startAtBeat)
   }
 
   return (
@@ -56,10 +56,10 @@ const LandingPage = () => {
         handleDelete={handleDelete}
         selectedData={selectedData}
         handleSelectedData={handleSelectedData}
-        result={result}
+        tihaiStartingBeat={tihaiStartingBeat}
         data={data}
       />
-      <GoButton data={data} handleResult={handleResult} />
+      <GoButton data={data} handleStartingBeat={handleStartingBeat} />
     </div>
   )
 }

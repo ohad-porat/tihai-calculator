@@ -6,28 +6,45 @@ const GoButton = (props) => {
   const timeSignature = props.data.timeSignature.split("/")
   const timeSignatureUp = parseInt(timeSignature[0])
   const timeSignatureDown = parseInt(timeSignature[1])
-  const subdivision = parseInt(props.data.subdivision)
+  const subdivisionValue = parseInt(props.data.subdivision)
 
-  let result
+  let startAtBeat
 
-  const getTihaiResult = () => {
+  const getTihaiStartingBeat = () => {
     const length = phrase * 3 + gap * 2
-    const adapter = subdivision / timeSignatureDown
-    const beatsInBar = timeSignatureUp * subdivision
+    const unitInBeat = subdivisionValue / timeSignatureDown
+    const beatsInBar = timeSignatureUp * unitInBeat
     const remainder = length % beatsInBar
-    result = (beatsInBar - remainder + 1) % beatsInBar
-    if (result === 0) {
-      result = beatsInBar
+    let tihaiStartingBeat = beatsInBar - remainder + 1
+    if (remainder === 0) {
+      tihaiStartingBeat = 1
     }
+    // debugger
 
-    props.handleResult(result / adapter / subdivision)
+    props.handleStartingBeat(tihaiStartingBeat)
   }
 
   return (
-    <div className="go-button-container" onClick={getTihaiResult}>
+    <div className="go-button-container" onClick={getTihaiStartingBeat}>
       <div className="go-button">GO</div>
     </div>
   )
 }
 
 export default GoButton
+
+// unitInBeat = subdivisionValue / timeSignatureDown
+// beatsInBar = timeSignatureUp * unitInBeat
+
+// const getTihaiStartingBeat = () => {
+//   const length = phrase * 3 + gap * 2
+//   const adapter = subdivision / timeSignatureDown
+//   const beatsInBar = timeSignatureUp * subdivision
+//   const remainder = length % beatsInBar
+//   startAtBeat = (beatsInBar - remainder + 1) % beatsInBar
+//   if (startAtBeat === 0) {
+//     startAtBeat = beatsInBar
+//   }
+
+//   props.handleStartingBeat(startAtBeat / adapter / subdivision)
+// }
