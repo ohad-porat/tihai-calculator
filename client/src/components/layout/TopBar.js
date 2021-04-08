@@ -14,11 +14,11 @@ const TopBar = ({ user }) => {
   //   </li>,
   // ]
 
-  const authenticatedListItems = [
-    <li key="sign-out">
-      <SignOutButton />
-    </li>,
-  ]
+  // const authenticatedListItems = [
+  //   <li key="sign-out">
+  //     <SignOutButton />
+  //   </li>,
+  // ]
 
   return (
     <div className="top-bar">
