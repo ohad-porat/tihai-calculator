@@ -3,10 +3,12 @@
   box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.5);
   background-color: rgba(0, 0, 0, 0.5);
   color: $pink;
+  font-family: 'Kalam', cursive;
 }
 
 a {
   color: $green;
+  transition: .25s ease-out;
 }
 
 a:visited {
@@ -14,5 +16,13 @@ a:visited {
 }
 
 a:hover {
-  color: scale-color($green, $lightness: -20%)
+  color: scale-color($pink, $lightness: -20%)
+}
+
+.menu-text {
+  margin-left: 20px;
+}
+
+.menu .menu-text {
+  font-weight: 400;
 }
