@@ -3,6 +3,7 @@ import React, { useState } from "react"
 import Calculator from "./Calculator.js"
 import GoButton from "./GoButton.js"
 import ClearButton from "./ClearButton.js"
+import Instructions from "./Instructions.js"
 
 const LandingPage = () => {
   const [data, setData] = useState({
@@ -101,8 +102,11 @@ const LandingPage = () => {
         tihaiStartingBeat={tihaiStartingBeat}
         data={data}
       />
-      <GoButton data={data} handleStartingBeat={handleStartingBeat} />
-      <ClearButton handleClear={handleClear} />
+      <div className="buttons-and-instructions">
+        <GoButton data={data} handleStartingBeat={handleStartingBeat} />
+        <ClearButton handleClear={handleClear} />
+        <Instructions selectedData={selectedData} />
+      </div>
     </div>
   )
 }

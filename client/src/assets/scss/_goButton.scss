@@ -21,6 +21,7 @@
   cursor: pointer;
   box-shadow: 0 0 0 4px $black;
   transition: box-shadow 0.25s ease-out;
+  float: left;
 }
 
 .go-button-container:hover {

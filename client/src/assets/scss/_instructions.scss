@@ -1,0 +1,32 @@
+.instructions-container {
+  margin-top: 210px;
+  margin-left: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: rgba(0, 0, 0, 0.5) 0 0 6px;
+  border-radius: 20px;
+  color: $white;
+  width: 400px;
+  height: 350px;
+}
+
+.instructions-header {
+  text-align: center;
+  font-family: "Kalam", cursive;
+  font-size: 32px;
+  padding-top: 5px;
+}
+
+.instructions-body {
+  margin: 0 15px;
+  font-family: "Kalam", cursive;
+  font-size: 20px;
+}
+
+.welcome-message {
+  font-size: 18.5px;
+}
+
+.first-paragraph,
+.second-paragraph {
+  margin-bottom: 12px;
+}
