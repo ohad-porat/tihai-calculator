@@ -2,23 +2,22 @@ const instructionsText = [
   {
     value: "phrase",
     header: "Phrase",
-    body: "Enter the length of the phrase.",
+    body: "The length of 1 repetition of the pattern (number of sub beats in 1 pattern).",
   },
   { 
     value: "gap", 
     header: "Gap", 
-    body: "Enter the length of the gap."
+    body: "The number of beats dividing phrase 1 and phrase 2."
   },
   {
     value: "timeSignature",
     header: "Time Signature",
-    body: `Enter the time signature.
-  Time signature consists of two number with a '/'.`,
+    body: "The overall beat count of the rhythmic cycle (4/4, 6/8 etc...).",
   },
   {
     value: "subdivision",
     header: "Subdivision",
-    body: "Choose a subdivision from the subdivision menu.",
+    body: "The way each main beat is internally divided.",
   },
 ]
 
