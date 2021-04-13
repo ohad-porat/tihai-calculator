@@ -18,7 +18,7 @@ const instructionsText = [
   {
     value: "subdivision",
     header: "Subdivision",
-    body: "Choose the subdivision from the subdivision menu",
+    body: "Choose a subdivision from the subdivision menu.",
   },
 ]
 
