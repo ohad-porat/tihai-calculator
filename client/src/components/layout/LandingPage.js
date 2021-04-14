@@ -21,6 +21,7 @@ const LandingPage = () => {
     image: "",
   })
   const [tihaiStartingBeat, setTihaiStartingBeat] = useState()
+  const [tihaiStartingBar, setTihaiStartingBar] = useState()
   const [errors, setErrors] = useState({})
 
   const addToDisplay = (number) => {
@@ -93,6 +94,10 @@ const LandingPage = () => {
     setTihaiStartingBeat(startAtBeat)
   }
 
+  const handleStartingBar = (startBar) => {
+    setTihaiStartingBar(startBar)
+  }
+
   const validateSubmission = () => {
     let submitErrors = validateInput(
       data.phrase,
@@ -122,10 +127,17 @@ const LandingPage = () => {
         <GoButton
           data={data}
           handleStartingBeat={handleStartingBeat}
+          handleStartingBar={handleStartingBar}
+          handleSelectedData={handleSelectedData}
           validateSubmission={validateSubmission}
         />
         <ClearButton handleClear={handleClear} />
-        <Instructions selectedData={selectedData} errors={errors} />
+        <Instructions
+          selectedData={selectedData}
+          errors={errors}
+          tihaiStartingBeat={tihaiStartingBeat}
+          tihaiStartingBar={tihaiStartingBar}
+        />
       </div>
     </div>
   )

@@ -33,6 +33,30 @@ const Instructions = (props) => {
         <ErrorList errors={props.errors} />
       </div>
     )
+  } else if (props.selectedData === "result") {
+    let bar = "bar"
+    if (props.tihaiStartingBar !== 1) {
+      bar = "bars"
+    }
+
+    let beat = props.tihaiStartingBeat
+    if (beat === 1) {
+      beat += "st"
+    } else if (beat === 2) {
+      beat += "nd"
+    } else if (beat === 3) {
+      beat += "rd"
+    } else {
+      beat += "th"
+    }
+
+    header = ""
+    body = (
+      <div className="result-text">
+        The Tihai should start {props.tihaiStartingBar} {bar} before the end on
+        the {beat} beat
+      </div>
+    )
   } else {
     let textByData = instructionsText.find(
       (element) => element.value === props.selectedData
