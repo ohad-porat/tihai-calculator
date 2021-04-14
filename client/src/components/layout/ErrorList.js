@@ -1,7 +1,7 @@
 import React from "react"
 import _ from "lodash"
 
-const ErrorList = props => {
+const ErrorList = (props) => {
   const errorFields = Object.keys(props.errors)
   if (errorFields.length > 0) {
     let index = 0
@@ -13,9 +13,7 @@ const ErrorList = props => {
         </li>
       )
     })
-    return (
-      <ul>{listItems}</ul>
-    )
+    return <ul>{listItems}</ul>
   } else {
     return ""
   }

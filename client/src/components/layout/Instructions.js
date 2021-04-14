@@ -26,6 +26,13 @@ const Instructions = (props) => {
         </div>
       </>
     )
+  } else if (props.selectedData === "errors") {
+    header = ""
+    body = (
+      <div className="error-list">
+        <ErrorList errors={props.errors} />
+      </div>
+    )
   } else {
     let textByData = instructionsText.find(
       (element) => element.value === props.selectedData
@@ -37,7 +44,7 @@ const Instructions = (props) => {
   return (
     <div className="instructions-container">
       <h1 className="instructions-header">{header}</h1>
-      <p className="instructions-body">{body}</p>
+      <div className="instructions-body">{body}</div>
     </div>
   )
 }

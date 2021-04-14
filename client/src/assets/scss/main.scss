@@ -3,8 +3,8 @@
 @include foundation-everything;
 
 @import url("https://fonts.googleapis.com/css2?family=Neucha&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600&display=swap");
 
 *,
 *::before,
@@ -24,6 +24,7 @@ $black: #080407;
 $green: #239423;
 $yellow: #cfdb22;
 $pink: #da346e;
+$red: #dd0000;
 
 @import "./topBar";
 @import "./calcButtons";

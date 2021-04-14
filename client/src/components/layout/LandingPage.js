@@ -7,7 +7,6 @@ import Calculator from "./Calculator.js"
 import GoButton from "./GoButton.js"
 import ClearButton from "./ClearButton.js"
 import Instructions from "./Instructions.js"
-import ErrorList from "./ErrorList.js"
 
 const LandingPage = () => {
   const [data, setData] = useState({
@@ -81,12 +80,12 @@ const LandingPage = () => {
       gap: "",
       subdivision: "",
     })
-
+    setSelectedData()
     setSelectedSubdivision({
       unitName: "",
       image: "",
     })
-
+    setErrors({})
     setTihaiStartingBeat()
   }
 
@@ -102,6 +101,7 @@ const LandingPage = () => {
     )
 
     setErrors(submitErrors)
+    setSelectedData("errors")
     return _.isEmpty(submitErrors)
   }
 
