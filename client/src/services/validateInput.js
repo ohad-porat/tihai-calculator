@@ -27,7 +27,7 @@ const validateInput = (phrase, timeSignature, subdivision) => {
   if (!timeSignature.includes("/") && timeSignature.trim() !== "") {
     submitErrors = {
       ...submitErrors,
-      ["time signature"]: "top and bottom number needs to be divided by a '/'",
+      ["time signature"]: "top and bottom numbers needs to be divided by a '/ '",
     }
   }
 
