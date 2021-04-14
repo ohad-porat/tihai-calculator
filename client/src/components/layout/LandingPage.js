@@ -1,4 +1,7 @@
 import React, { useState } from "react"
+import _ from "lodash"
+
+import validateInput from "../../services/validateInput.js"
 
 import Calculator from "./Calculator.js"
 import GoButton from "./GoButton.js"
@@ -18,6 +21,7 @@ const LandingPage = () => {
     image: "",
   })
   const [tihaiStartingBeat, setTihaiStartingBeat] = useState()
+  const [errors, setErrors] = useState({})
 
   const addToDisplay = (number) => {
     if (
@@ -76,17 +80,29 @@ const LandingPage = () => {
       gap: "",
       subdivision: "",
     })
-
+    setSelectedData()
     setSelectedSubdivision({
       unitName: "",
       image: "",
     })
-
+    setErrors({})
     setTihaiStartingBeat()
   }
 
   const handleStartingBeat = (startAtBeat) => {
     setTihaiStartingBeat(startAtBeat)
+  }
+
+  const validateSubmission = () => {
+    let submitErrors = validateInput(
+      data.phrase,
+      data.timeSignature,
+      data.subdivision
+    )
+
+    setErrors(submitErrors)
+    setSelectedData("errors")
+    return _.isEmpty(submitErrors)
   }
 
   return (
@@ -103,9 +119,13 @@ const LandingPage = () => {
         data={data}
       />
       <div className="buttons-and-instructions">
-        <GoButton data={data} handleStartingBeat={handleStartingBeat} />
+        <GoButton
+          data={data}
+          handleStartingBeat={handleStartingBeat}
+          validateSubmission={validateSubmission}
+        />
         <ClearButton handleClear={handleClear} />
-        <Instructions selectedData={selectedData} />
+        <Instructions selectedData={selectedData} errors={errors} />
       </div>
     </div>
   )
