@@ -8,8 +8,7 @@ const aboutUsData = [
   },
   {
     name: "Ohad Porat",
-    description:
-      "Ohad is a software engineer, musical producer and educator.",
+    description: "Ohad is a software engineer, musical producer and educator.",
     linkedinUrl: "https://www.linkedin.com/in/ohad-porat/",
     githubUrl: "https://github.com/ohad-porat",
   },
