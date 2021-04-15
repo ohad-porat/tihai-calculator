@@ -9,7 +9,7 @@ const aboutUsData = [
   {
     name: "Ohad Porat",
     description:
-      "some text some text some text some text some text some text some text some text",
+      "Ohad is a software engineer, musical producer and educator.",
     linkedinUrl: "https://www.linkedin.com/in/ohad-porat/",
     githubUrl: "https://github.com/ohad-porat",
   },
