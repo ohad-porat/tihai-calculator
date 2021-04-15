@@ -14,7 +14,7 @@ const GoButton = (props) => {
       const unitInBeat = subdivisionValue / timeSignatureDown
       const unitsInBar = timeSignatureUp * unitInBeat
       const remainder = length % unitsInBar
-      const tihaiStartingBeat = unitsInBar - remainder + 1
+      let tihaiStartingBeat = unitsInBar - remainder + 1
       const tihaiStartingBar = Math.ceil(length / unitsInBar)
 
       if (remainder === 0) {
