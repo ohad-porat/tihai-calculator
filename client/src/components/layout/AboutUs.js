@@ -25,7 +25,7 @@ const AboutUs = () => {
               </a>
               <a href={yogev.patreonUrl} target="_blank">
                 <span className="url-icon">
-                  <i class="fab fa-patreon"></i>
+                  <i className="fab fa-patreon"></i>
                 </span>
               </a>
             </div>
@@ -37,12 +37,12 @@ const AboutUs = () => {
             <div className="icon-container-ohad">
               <a href={ohad.linkedinUrl} target="_blank">
                 <span className="url-icon icon-left">
-                  <i class="fab fa-linkedin-in"></i>
+                  <i className="fab fa-linkedin-in"></i>
                 </span>
               </a>
               <a href={ohad.githubUrl} target="_blank">
                 <span className="url-icon">
-                  <i class="fab fa-github"></i>
+                  <i className="fab fa-github"></i>
                 </span>
               </a>
             </div>
