@@ -15,7 +15,7 @@ const TopBar = () => {
             <a href="https://www.youtube.com/watch?v=0kJ4PA2yOSU" target="_blank">What Is Tihai?</a>
           </li>
           <li>
-            <Link to="/">About Us</Link>
+            <Link to="/about-us">About Us</Link>
           </li>
         </ul>
       </div>

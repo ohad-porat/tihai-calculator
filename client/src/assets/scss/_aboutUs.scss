@@ -1,0 +1,63 @@
+.about-us-body {
+  margin-top: 25px;
+}
+
+.about-tile.callout.cell.medium-4 {
+  margin-left: 45px;
+}
+
+.callout {
+  background-color: rgba(255, 255, 255, 0.87);
+  border-radius: 15px;
+}
+
+.about-pic {
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
+}
+
+.about-pic.yogev {
+  object-position: 100% 50%;
+}
+
+.about-pic.ohad {
+  object-position: 0% 50%;
+}
+
+.about-name {
+  text-align: center;
+  font-family: "Kalam", cursive;
+  margin-top: 10px;
+}
+
+.about-description {
+  font-size: 18px;
+}
+
+.icon-container-yogev {
+  width: 35%;
+  margin: auto;
+}
+
+.icon-container-ohad {
+  width: 30%;
+  margin: auto;
+}
+
+.url-icon {
+  font-size: 32px;
+  transition: .2s ease-out;
+}
+
+.url-icon:hover {
+  color: $pink;
+}
+
+.icon-left {
+  margin-right: 40px;
+}
