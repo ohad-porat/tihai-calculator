@@ -9,6 +9,7 @@ import SignInForm from "./authentication/SignInForm"
 import TopBar from "./layout/TopBar"
 import LandingPage from "./layout/LandingPage"
 import AboutUs from "./layout/AboutUs"
+import WhatIsTihai from "./layout/WhatIsTihai"
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(undefined)
@@ -27,6 +28,7 @@ const App = (props) => {
       <Switch>
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/about-us" component={AboutUs} />
+        <Route exact path="/what-is-tihai" component={WhatIsTihai} />
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
       </Switch>

@@ -12,7 +12,7 @@ const TopBar = () => {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <a href="https://www.youtube.com/watch?v=0kJ4PA2yOSU" target="_blank">What Is Tihai?</a>
+          <Link to="/what-is-tihai">What Is Tihai?</Link>
           </li>
           <li>
             <Link to="/about-us">About Us</Link>
