@@ -3,13 +3,13 @@ import React from "react"
 const GoButton = (props) => {
   const phrase = parseInt(props.data.phrase)
   const gap = props.data.gap === "" ? 0 : parseInt(props.data.gap)
-  const timeSignature = parseInt(props.data.timeSignature)
+  const timeCycle = parseInt(props.data.timeCycle)
   const subdivision = parseInt(props.data.subdivision)
 
   const getTihaiStartingBeatAndBar = () => {
     if (props.validateSubmission()) {
       const length = phrase * 3 + gap * 2
-      const cycle = timeSignature * subdivision
+      const cycle = timeCycle * subdivision
 
         const remainder = length % cycle 
         const tihaiStartingBeat = cycle - remainder + 1 

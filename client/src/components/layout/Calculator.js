@@ -37,7 +37,7 @@ const Calculator = (props) => {
           <SelectTypeButton
             handleSelectedData={props.handleSelectedData}
             selectedData={props.selectedData}
-            value="timeSignature"
+            value="timeCycle"
           >
             Time Cycle
           </SelectTypeButton>

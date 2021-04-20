@@ -1,7 +1,5 @@
-const validateInput = (phrase, timeSignature, subdivision) => {
+const validateInput = (phrase, timeCycle, subdivision) => {
   let submitErrors = {}
-  const timeSignatureArray = timeSignature.split("/")
-  const timeSignatureDown = timeSignatureArray[1]
 
   if (phrase.trim() === "") {
     submitErrors = {
@@ -17,10 +15,10 @@ const validateInput = (phrase, timeSignature, subdivision) => {
     }
   }
 
-  if (timeSignature.trim() === "") {
+  if (timeCycle.trim() === "") {
     submitErrors = {
       ...submitErrors,
-      ["time signature"]: "cannot be empty",
+      ["time cycle"]: "cannot be empty",
     }
   }
 

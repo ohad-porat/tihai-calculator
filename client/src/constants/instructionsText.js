@@ -10,8 +10,8 @@ const instructionsText = [
     body: "The number of beats dividing phrase 1 and phrase 2."
   },
   {
-    value: "timeSignature",
-    header: "Time Signature",
+    value: "timeCycle",
+    header: "Time Cycle",
     body: "The overall beat count of the rhythmic cycle.",
   },
   {

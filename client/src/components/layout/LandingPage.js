@@ -10,7 +10,7 @@ import Instructions from "./Instructions.js"
 const LandingPage = () => {
   const [data, setData] = useState({
     phrase: "",
-    timeSignature: "",
+    timeCycle: "",
     gap: "",
     subdivision: "",
   })
@@ -26,7 +26,7 @@ const LandingPage = () => {
   const addToDisplay = (number) => {
     if (
       selectedData === "phrase" ||
-      selectedData === "timeSignature" ||
+      selectedData === "timeCycle" ||
       selectedData === "gap"
     ) {
       setData({
@@ -76,7 +76,7 @@ const LandingPage = () => {
   const handleClear = () => {
     setData({
       phrase: "",
-      timeSignature: "",
+      timeCycle: "",
       gap: "",
       subdivision: "",
     })
@@ -100,7 +100,7 @@ const LandingPage = () => {
   const validateSubmission = () => {
     let submitErrors = validateInput(
       data.phrase,
-      data.timeSignature,
+      data.timeCycle,
       data.subdivision
     )
 
