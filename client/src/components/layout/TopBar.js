@@ -7,10 +7,7 @@ const TopBar = () => {
     <div className="top-bar">
       <div className="top-bar-left">
         <ul className="menu">
-          <li className="menu-text">Tihai GPS Calculator</li>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
+          <li className="menu-text"><Link to="/" className="home-link">Tihai GPS Calculator</Link></li>
           <li>
           <Link to="/what-is-tihai">What Is Tihai?</Link>
           </li>

@@ -19,10 +19,18 @@ a:hover {
   color: scale-color($pink, $lightness: -20%)
 }
 
+a.home-link {
+  color: $pink;
+}
+
 .menu-text {
   margin-left: 20px;
 }
 
 .menu .menu-text {
   font-weight: 400;
+}
+
+li.menu-text {
+  display: contents;
 }
