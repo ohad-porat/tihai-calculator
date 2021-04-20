@@ -12,7 +12,7 @@ const instructionsText = [
   {
     value: "timeSignature",
     header: "Time Signature",
-    body: "The overall beat count of the rhythmic cycle (4/4, 6/8 etc...).",
+    body: "The overall beat count of the rhythmic cycle.",
   },
   {
     value: "subdivision",

@@ -5,7 +5,6 @@ import validateInput from "../../services/validateInput.js"
 
 import Calculator from "./Calculator.js"
 import GoButton from "./GoButton.js"
-import ClearButton from "./ClearButton.js"
 import Instructions from "./Instructions.js"
 
 const LandingPage = () => {
@@ -122,6 +121,7 @@ const LandingPage = () => {
         handleDelete={handleDelete}
         tihaiStartingBeat={tihaiStartingBeat}
         data={data}
+        handleClear={handleClear}
       />
       <div className="buttons-and-instructions">
         <GoButton
@@ -131,7 +131,6 @@ const LandingPage = () => {
           handleSelectedData={handleSelectedData}
           validateSubmission={validateSubmission}
         />
-        <ClearButton handleClear={handleClear} />
         <Instructions
           selectedData={selectedData}
           errors={errors}
