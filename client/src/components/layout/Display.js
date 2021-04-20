@@ -8,7 +8,7 @@ const Display = (props) => {
           P-&nbsp;<span className="digit">{props.data.phrase}</span>
         </div>
         <div className="data-item">
-          TS-&nbsp;<span className="digit">{props.data.timeSignature}</span>
+          TC-&nbsp;<span className="digit">{props.data.timeCycle}</span>
         </div>
         <div className="data-item">
           G-&nbsp;<span className="digit">{props.data.gap}</span>
