@@ -44,10 +44,20 @@ const LandingPage = () => {
   }
   
     const handleKeyPress = (event) => {
-      if (Number.isInteger(parseInt(event.key))) {
-        addToDisplay(event.key)
-      } else if (event.key === "Backspace") {
-        handleDelete()
+      if (
+        selectedData === "phrase" ||
+        selectedData === "timeCycle" ||
+        selectedData === "gap"
+      ) {
+        if (Number.isInteger(parseInt(event.key))) {
+          addToDisplay(event.key)
+        } else if (event.key === "Backspace") {
+          handleDelete()
+        }
+      }
+
+      if (event.key === "Enter") {
+        getTihaiStartingBeatAndBar()
       }
     }
   
@@ -117,6 +127,27 @@ const LandingPage = () => {
     return _.isEmpty(submitErrors)
   }
 
+  const getTihaiStartingBeatAndBar = () => {
+    const phrase = parseInt(data.phrase)
+    const gap = data.gap === "" ? 0 : parseInt(data.gap)
+    const timeCycle = parseInt(data.timeCycle)
+    const subdivision = parseInt(data.subdivision)
+    
+    if (validateSubmission()) {
+      const length = phrase * 3 + gap * 2
+      const cycle = timeCycle * subdivision
+
+        const remainder = length % cycle 
+        const tihaiStartingBeat = cycle - remainder + 1 
+
+      handleSelectedData("result")
+      handleStartingBeat(tihaiStartingBeat)
+      
+      const tihaiStartingBar = 0
+      handleStartingBar(tihaiStartingBar)
+      }
+    }
+
   return (
     <div className="landing-page">
       <Calculator
@@ -138,7 +169,7 @@ const LandingPage = () => {
           handleStartingBeat={handleStartingBeat}
           handleStartingBar={handleStartingBar}
           handleSelectedData={handleSelectedData}
-          validateSubmission={validateSubmission}
+          getTihaiStartingBeatAndBar={getTihaiStartingBeatAndBar}
         />
         <Instructions
           selectedData={selectedData}
