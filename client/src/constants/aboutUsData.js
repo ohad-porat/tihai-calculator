@@ -8,13 +8,13 @@ const aboutUsData = [
   },
   {
     name: "Ohad Porat",
-    description: "Ohad is a software engineer, musical producer, educator, and huge sports fan.",
+    description: "Ohad is a software engineer, musical producer, educator, and a huge sports fan.",
     linkedinUrl: "https://www.linkedin.com/in/ohad-porat/",
     githubUrl: "https://github.com/ohad-porat",
   },
   {
     name: "Tom Ketter",
-    description: "Tom is a software developer who loves to do cool projects with friends, and is a space geek.",
+    description: "Tom is a software developer who loves to do cool projects with his friends, and is a space geek.",
     linkedinUrl: "https://www.linkedin.com/in/tom-ketter/",
   },
 ]
