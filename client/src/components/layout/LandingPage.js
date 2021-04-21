@@ -35,14 +35,22 @@ const LandingPage = () => {
       })
     }
   }
-
+  
   const addSubdivision = (value) => {
     setData({
       ...data,
       ["subdivision"]: value,
     })
   }
-
+  
+    const handleKeyPress = (event) => {
+      if (Number.isInteger(parseInt(event.key))) {
+        addToDisplay(event.key)
+      } else if (event.key === "Backspace") {
+        handleDelete()
+      }
+    }
+  
   const handleSelectedData = (dataType) => {
     setSelectedData(dataType)
   }
@@ -113,6 +121,7 @@ const LandingPage = () => {
     <div className="landing-page">
       <Calculator
         addToDisplay={addToDisplay}
+        handleKeyPress={handleKeyPress}
         addSubdivision={addSubdivision}
         selectedData={selectedData}
         handleSelectedData={handleSelectedData}

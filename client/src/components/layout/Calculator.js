@@ -17,7 +17,7 @@ import RhythmicUnitButton from "./RhythmicUnitButton.js"
 
 const Calculator = (props) => {
   return (
-    <div className="calculator">
+    <div className="calculator" onKeyDown={props.handleKeyPress} tabIndex="0">
       <div className="calc-container">
         <div className="row">
           <Display
