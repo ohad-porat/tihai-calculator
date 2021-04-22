@@ -69,6 +69,7 @@ const AboutUs = () => {
               </a>
             </div>
           </div>
+          <p className="email-us">Email us at <a href="mailto:tihaiTeam@gmail.com" target="_blank">tihaiTeam@gmail.com</a> with any comments or questions.</p>
         </div>
       </div>
     </div>
