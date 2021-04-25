@@ -23,7 +23,7 @@ const Calculator = (props) => {
           <Display
             data={props.data}
             subdivision={props.selectedSubdivision}
-            tihaiStartingBeat={props.tihaiStartingBeat}
+            overallStartingBeat={props.overallStartingBeat}
           ></Display>
         </div>
         <div className="row">

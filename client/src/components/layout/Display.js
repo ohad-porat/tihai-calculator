@@ -19,7 +19,7 @@ const Display = (props) => {
         </div>
       </div>
       <div className="starting-beat">
-        <span className="digit">{props.tihaiStartingBeat}</span>
+        <span className="digit">{props.overallStartingBeat}</span>
       </div>
     </div>
   )

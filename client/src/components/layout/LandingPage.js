@@ -2,6 +2,9 @@ import React, { useState } from "react"
 import _ from "lodash"
 
 import validateInput from "../../services/validateInput.js"
+import getOverallStartingBeat from "../../services/getOverallStartingBeat.js"
+import getStartingBeat from "../../services/getStartingBeat.js"
+import getStartingSubBeat from "../../services/getStartingSubBeat.js"
 
 import Calculator from "./Calculator.js"
 import GoButton from "./GoButton.js"
@@ -19,8 +22,11 @@ const LandingPage = () => {
     unitName: "",
     image: "",
   })
-  const [tihaiStartingBeat, setTihaiStartingBeat] = useState()
-  const [tihaiStartingBar, setTihaiStartingBar] = useState()
+  const [tihaiStart, setTihaiStart] = useState({
+    overallBeat: "",
+    beat: "",
+    subBeat: "",
+  })
   const [errors, setErrors] = useState({})
 
   const addToDisplay = (number) => {
@@ -35,32 +41,32 @@ const LandingPage = () => {
       })
     }
   }
-  
+
   const addSubdivision = (value) => {
     setData({
       ...data,
       ["subdivision"]: value,
     })
   }
-  
-    const handleKeyPress = (event) => {
-      if (
-        selectedData === "phrase" ||
-        selectedData === "timeCycle" ||
-        selectedData === "gap"
-      ) {
-        if (Number.isInteger(parseInt(event.key))) {
-          addToDisplay(event.key)
-        } else if (event.key === "Backspace") {
-          handleDelete()
-        }
-      }
 
-      if (event.key === "Enter") {
-        getTihaiStartingBeatAndBar()
+  const handleKeyPress = (event) => {
+    if (
+      selectedData === "phrase" ||
+      selectedData === "timeCycle" ||
+      selectedData === "gap"
+    ) {
+      if (Number.isInteger(parseInt(event.key))) {
+        addToDisplay(event.key)
+      } else if (event.key === "Backspace") {
+        handleDelete()
       }
     }
-  
+
+    if (event.key === "Enter") {
+      getResult()
+    }
+  }
+
   const handleSelectedData = (dataType) => {
     setSelectedData(dataType)
   }
@@ -104,15 +110,11 @@ const LandingPage = () => {
       image: "",
     })
     setErrors({})
-    setTihaiStartingBeat()
-  }
-
-  const handleStartingBeat = (startAtBeat) => {
-    setTihaiStartingBeat(startAtBeat)
-  }
-
-  const handleStartingBar = (startBar) => {
-    setTihaiStartingBar(startBar)
+    setTihaiStart({
+      overallBeat: "",
+      beat: "",
+      subBeat: "",
+    })
   }
 
   const validateSubmission = () => {
@@ -127,26 +129,28 @@ const LandingPage = () => {
     return _.isEmpty(submitErrors)
   }
 
-  const getTihaiStartingBeatAndBar = () => {
-    const phrase = parseInt(data.phrase)
-    const gap = data.gap === "" ? 0 : parseInt(data.gap)
-    const timeCycle = parseInt(data.timeCycle)
-    const subdivision = parseInt(data.subdivision)
-    
+  const getResult = () => {
     if (validateSubmission()) {
-      const length = phrase * 3 + gap * 2
-      const cycle = timeCycle * subdivision
+      const tihaiOverallBeat = getOverallStartingBeat(
+        data.phrase,
+        data.gap,
+        data.timeCycle,
+        data.subdivision
+      )
+      const tihaiBeat = getStartingBeat(tihaiOverallBeat, data.subdivision)
+      const tihaiSubBeat = getStartingSubBeat(
+        tihaiOverallBeat,
+        data.subdivision
+      )
 
-        const remainder = length % cycle 
-        const tihaiStartingBeat = cycle - remainder + 1 
-
-      handleSelectedData("result")
-      handleStartingBeat(tihaiStartingBeat)
-      
-      const tihaiStartingBar = 0
-      handleStartingBar(tihaiStartingBar)
-      }
+      setSelectedData("result")
+      setTihaiStart({
+        overallBeat: tihaiOverallBeat,
+        beat: Math.floor(tihaiBeat),
+        subBeat: tihaiSubBeat,
+      })
     }
+  }
 
   return (
     <div className="landing-page">
@@ -159,23 +163,18 @@ const LandingPage = () => {
         selectedSubdivision={selectedSubdivision}
         handleSelectedSubdivision={handleSelectedSubdivision}
         handleDelete={handleDelete}
-        tihaiStartingBeat={tihaiStartingBeat}
+        overallStartingBeat={tihaiStart.overallBeat}
         data={data}
         handleClear={handleClear}
       />
       <div className="buttons-and-instructions">
-        <GoButton
-          data={data}
-          handleStartingBeat={handleStartingBeat}
-          handleStartingBar={handleStartingBar}
-          handleSelectedData={handleSelectedData}
-          getTihaiStartingBeatAndBar={getTihaiStartingBeatAndBar}
-        />
+        <GoButton data={data} getResult={getResult} />
         <Instructions
           selectedData={selectedData}
           errors={errors}
-          tihaiStartingBeat={tihaiStartingBeat}
-          tihaiStartingBar={tihaiStartingBar}
+          overallStartingBeat={tihaiStart.overallBeat}
+          startingBeat={tihaiStart.beat}
+          startingSubBeat={tihaiStart.subBeat}
         />
       </div>
     </div>

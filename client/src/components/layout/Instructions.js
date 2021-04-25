@@ -34,29 +34,23 @@ const Instructions = (props) => {
       </div>
     )
   } else if (props.selectedData === "result") {
-    let bar = "bar"
-    if (props.tihaiStartingBar !== 1) {
-      bar = "bars"
-    }
-
-    let beat = props.tihaiStartingBeat
-    if (beat === 1) {
-      beat += "st"
-    } else if (beat === 2) {
-      beat += "nd"
-    } else if (beat === 3) {
-      beat += "rd"
+    let tihaiStartMessage
+    if (props.overallStartingBeat === 1) {
+      tihaiStartMessage = `The tihai starts on beat ${props.startingBeat}.`
+    } else if (props.startingSubBeat === 0) {
+      tihaiStartMessage = `The tihai starts on beat ${
+        props.startingBeat
+      }. Count ${props.overallStartingBeat - 1} and then start.`
     } else {
-      beat += "th"
+      tihaiStartMessage = `The tihai starts ${props.startingSubBeat} ${
+        props.startingSubBeat === 1 ? "sub-beat" : "sub-beats"
+      } after beat ${props.startingBeat}. Count ${
+        props.overallStartingBeat - 1
+      } and then start.`
     }
 
     header = ""
-    body = (
-      <div className="result-text">
-        The Tihai should start {props.tihaiStartingBar} {bar} before the end on
-        the {beat} beat
-      </div>
-    )
+    body = <div className="result-text">{tihaiStartMessage}</div>
   } else {
     let textByData = instructionsText.find(
       (element) => element.value === props.selectedData
