@@ -8,7 +8,7 @@ import TopBar from "./layout/TopBar"
 import LandingPage from "./layout/tihaiCalculator/TihaiLandingPage"
 import AboutUs from "./layout/AboutUs"
 import WhatIsTihai from "./layout/WhatIsTihai"
-import MesuggahMainPage from "./layout/mesuggahCalculator/MesuggahMainPage"
+import MeshuggahMainPage from "./layout/meshuggahCalculator/MeshuggahMainPage"
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(undefined)
@@ -28,7 +28,7 @@ const App = (props) => {
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/about-us" component={AboutUs} />
         <Route exact path="/what-is-tihai" component={WhatIsTihai} />
-        <Route exact path="/mesuggah-calculator" component={MesuggahMainPage} />
+        <Route exact path="/meshuggah-calculator" component={MeshuggahMainPage} />
       </Switch>
     </Router>
   )

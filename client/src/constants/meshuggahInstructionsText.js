@@ -1,4 +1,4 @@
-const mesuggahInstructionsText = [
+const meshuggahInstructionsText = [
   {
     value: "timeSignature",
     header: "Time Signature",
@@ -21,4 +21,4 @@ const mesuggahInstructionsText = [
   },
 ]
 
-export default mesuggahInstructionsText
+export default meshuggahInstructionsText

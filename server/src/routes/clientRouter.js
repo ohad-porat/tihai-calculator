@@ -7,7 +7,7 @@ const clientRoutes = [
   "/",
   "/about-us",
   "/what-is-tihai",
-  "/mesuggah-calculator",
+  "/meshuggah-calculator",
 ]
 router.get(clientRoutes, (req, res) => {
   res.sendFile(getClientIndexPath())

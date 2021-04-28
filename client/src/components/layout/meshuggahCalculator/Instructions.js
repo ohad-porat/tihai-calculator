@@ -1,7 +1,7 @@
 import React from "react"
 import _ from "lodash"
 
-import mesuggahInstructionsText from "../../../constants/mesuggahInstructionsText.js"
+import meshuggahInstructionsText from "../../../constants/meshuggahInstructionsText.js"
 
 import ErrorList from "../ErrorList"
 
@@ -9,7 +9,7 @@ const Instructions = (props) => {
   let header
   let body
   if (props.selectedData === undefined || props.selectedData === "") {
-    header = "The Mesuggah Calculator"
+    header = "The Meshuggah Calculator"
     body = (
       <>
         <div className="welcome-message first-paragraph">Paragraph 1</div>
@@ -43,7 +43,7 @@ const Instructions = (props) => {
     header = ""
     body = <div className="result-text">{tihaiStartMessage}</div>
   } else {
-    let textByData = mesuggahInstructionsText.find(
+    let textByData = meshuggahInstructionsText.find(
       (element) => element.value === props.selectedData
     )
     header = textByData.header

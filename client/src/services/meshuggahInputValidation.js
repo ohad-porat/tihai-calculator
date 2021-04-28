@@ -1,4 +1,4 @@
-const mesuggahInputValidation = (timeSignature, subdivision, phrase, barCount) => {
+const meshuggahInputValidation = (timeSignature, subdivision, phrase, barCount) => {
   let submitErrors = {}
 
   if (timeSignature.trim() === "") {
@@ -32,4 +32,4 @@ const mesuggahInputValidation = (timeSignature, subdivision, phrase, barCount) =
   return submitErrors
 }
 
-export default mesuggahInputValidation
+export default meshuggahInputValidation

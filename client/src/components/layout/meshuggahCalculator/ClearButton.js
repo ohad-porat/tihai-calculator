@@ -6,7 +6,7 @@ const ClearButton = (props) => {
   }
 
   return (
-    <div className="button clear-button mesuggah-calc" onClick={handleClickButton}>
+    <div className="button clear-button meshuggah-calc" onClick={handleClickButton}>
       {props.children}
     </div>
   )

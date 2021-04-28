@@ -1,13 +1,13 @@
 import React, { useState } from "react"
 import _ from "lodash"
 
-import mesuggahInputValidation from "../../../services/mesuggahInputValidation.js"
+import meshuggahInputValidation from "../../../services/meshuggahInputValidation.js"
 
 import Calculator from "./Calculator.js"
 import GoButton from "./GoButton.js"
 import Instructions from "./Instructions.js"
 
-const MesuggahMainPage = () => {
+const MeshuggahMainPage = () => {
   const [data, setData] = useState({
     timeSignature: "",
     subdivision: "",
@@ -114,7 +114,7 @@ const MesuggahMainPage = () => {
   }
 
   const validateSubmission = () => {
-    let submitErrors = mesuggahInputValidation(
+    let submitErrors = meshuggahInputValidation(
       data.timeSignature,
       data.subdivision,
       data.phrase,
@@ -165,4 +165,4 @@ const MesuggahMainPage = () => {
   )
 }
 
-export default MesuggahMainPage
+export default MeshuggahMainPage
