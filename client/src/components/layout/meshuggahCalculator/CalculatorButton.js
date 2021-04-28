@@ -1,6 +1,6 @@
 import React from "react"
 
-const NumberButton = (props) => {
+const CalculatorButton = (props) => {
   const handleClickButton = () => {
     props.addToDisplay(props.children)
   }
@@ -12,4 +12,4 @@ const NumberButton = (props) => {
   )
 }
 
-export default NumberButton
+export default CalculatorButton

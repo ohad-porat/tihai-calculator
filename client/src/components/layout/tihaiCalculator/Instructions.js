@@ -1,9 +1,9 @@
 import React from "react"
 import _ from "lodash"
 
-import instructionsText from "../../constants/instructionsText.js"
+import tihaiInstructionsText from "../../../constants/tihaiInstructionsText.js"
 
-import ErrorList from "./ErrorList.js"
+import ErrorList from "../ErrorList"
 
 const Instructions = (props) => {
   let header
@@ -52,7 +52,7 @@ const Instructions = (props) => {
     header = ""
     body = <div className="result-text">{tihaiStartMessage}</div>
   } else {
-    let textByData = instructionsText.find(
+    let textByData = tihaiInstructionsText.find(
       (element) => element.value === props.selectedData
     )
     header = textByData.header

@@ -1,4 +1,4 @@
-const validateInput = (phrase, timeCycle, subdivision) => {
+const tihaiInputValidation = (phrase, timeCycle, subdivision) => {
   let submitErrors = {}
 
   if (phrase.trim() === "") {
@@ -25,4 +25,4 @@ const validateInput = (phrase, timeCycle, subdivision) => {
   return submitErrors
 }
 
-export default validateInput
+export default tihaiInputValidation

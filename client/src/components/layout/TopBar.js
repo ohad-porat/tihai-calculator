@@ -12,6 +12,9 @@ const TopBar = () => {
           <Link to="/what-is-tihai">What Is Tihai?</Link>
           </li>
           <li>
+          <Link to="/meshuggah-calculator">Meshuggah Calculator</Link>
+          </li>
+          <li>
             <Link to="/about-us">About Us</Link>
           </li>
         </ul>

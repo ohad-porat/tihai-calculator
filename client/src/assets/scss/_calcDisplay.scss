@@ -45,3 +45,22 @@
   background-color: $pink;
   color: $white;
 }
+
+.data-item.meshuggah-calc {
+  width: 4.2em;
+}
+
+.data-container.meshuggah-calc {
+  width: 14em;
+}
+
+.meshuggah-result {
+  font-size: 20px;
+  margin-bottom: 13px;
+}
+
+span.digit-meshuggah {
+  font-family: "Orbitron", sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+}
