@@ -4,12 +4,11 @@ import { hot } from "react-hot-loader/root"
 
 import getCurrentUser from "../services/getCurrentUser"
 import "../assets/scss/main.scss"
-import RegistrationForm from "./registration/RegistrationForm"
-import SignInForm from "./authentication/SignInForm"
 import TopBar from "./layout/TopBar"
-import LandingPage from "./layout/LandingPage"
+import LandingPage from "./layout/tihaiCalculator/TihaiLandingPage"
 import AboutUs from "./layout/AboutUs"
 import WhatIsTihai from "./layout/WhatIsTihai"
+import MesuggahMainPage from "./layout/mesuggahCalculator/MesuggahMainPage"
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(undefined)
@@ -29,8 +28,7 @@ const App = (props) => {
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/about-us" component={AboutUs} />
         <Route exact path="/what-is-tihai" component={WhatIsTihai} />
-        <Route exact path="/users/new" component={RegistrationForm} />
-        <Route exact path="/user-sessions/new" component={SignInForm} />
+        <Route exact path="/mesuggah-calculator" component={MesuggahMainPage} />
       </Switch>
     </Router>
   )

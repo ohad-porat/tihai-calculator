@@ -13,9 +13,13 @@ const Display = (props) => {
         <div className="data-item">
           G-&nbsp;<span className="digit">{props.data.gap}</span>
         </div>
-        <div className={"data-item"}>
+        <div className="data-item">
           S-
-          <img src={props.subdivision.image} alt={props.subdivision.unitName} className={`subdivision-display ${props.subdivision.unitName}`} />
+          <img
+            src={props.subdivision.image}
+            alt={props.subdivision.unitName}
+            className={`subdivision-display ${props.subdivision.unitName}`}
+          />
         </div>
       </div>
       <div className="starting-beat">

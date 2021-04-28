@@ -1,4 +1,4 @@
-const instructionsText = [
+const tihaiInstructionsText = [
   {
     value: "phrase",
     header: "Phrase",
@@ -21,4 +21,4 @@ const instructionsText = [
   },
 ]
 
-export default instructionsText
+export default tihaiInstructionsText

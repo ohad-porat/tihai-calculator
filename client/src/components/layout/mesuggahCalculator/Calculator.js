@@ -1,16 +1,16 @@
 import React from "react"
 
-import quarter from "../../assets/images/rhythmicUnits/quarter.png"
-import eighth from "../../assets/images/rhythmicUnits/eighth.png"
-import tuplet from "../../assets/images/rhythmicUnits/tuplets.png"
-import sixteenth from "../../assets/images/rhythmicUnits/16th.png"
-import quintuplets from "../../assets/images/rhythmicUnits/quintuplets.png"
-import sextuplets from "../../assets/images/rhythmicUnits/sextuplets.png"
-import septuplets from "../../assets/images/rhythmicUnits/septuplets.png"
-import thirtyTwo from "../../assets/images/rhythmicUnits/32nd.png"
+import quarter from "../../../assets/images/rhythmicUnits/quarter.png"
+import eighth from "../../../assets/images/rhythmicUnits/eighth.png"
+import tuplet from "../../../assets/images/rhythmicUnits/tuplets.png"
+import sixteenth from "../../../assets/images/rhythmicUnits/16th.png"
+import quintuplets from "../../../assets/images/rhythmicUnits/quintuplets.png"
+import sextuplets from "../../../assets/images/rhythmicUnits/sextuplets.png"
+import septuplets from "../../../assets/images/rhythmicUnits/septuplets.png"
+import thirtyTwo from "../../../assets/images/rhythmicUnits/32nd.png"
 
-import NumberButton from "./NumberButton.js"
-import DeleteButton from "./DeleteButton.js"
+import CalculatorButton from "./CalculatorButton.js"
+import ClearButton from "./ClearButton.js"
 import SelectTypeButton from "./SelectTypeButton.js"
 import Display from "./Display.js"
 import RhythmicUnitButton from "./RhythmicUnitButton.js"
@@ -23,10 +23,18 @@ const Calculator = (props) => {
           <Display
             data={props.data}
             subdivision={props.selectedSubdivision}
-            overallStartingBeat={props.overallStartingBeat}
+            fullReps={props.fullReps}
+            remainder={props.remainder}
           ></Display>
         </div>
         <div className="row">
+          <SelectTypeButton
+            handleSelectedData={props.handleSelectedData}
+            selectedData={props.selectedData}
+            value="timeSignature"
+          >
+            Time Signature
+          </SelectTypeButton>
           <SelectTypeButton
             handleSelectedData={props.handleSelectedData}
             selectedData={props.selectedData}
@@ -34,22 +42,8 @@ const Calculator = (props) => {
           >
             Phrase
           </SelectTypeButton>
-          <SelectTypeButton
-            handleSelectedData={props.handleSelectedData}
-            selectedData={props.selectedData}
-            value="timeCycle"
-          >
-            Time Cycle
-          </SelectTypeButton>
         </div>
         <div className="row">
-          <SelectTypeButton
-            handleSelectedData={props.handleSelectedData}
-            selectedData={props.selectedData}
-            value="gap"
-          >
-            Gap
-          </SelectTypeButton>
           <SelectTypeButton
             handleSelectedData={props.handleSelectedData}
             selectedData={props.selectedData}
@@ -57,28 +51,36 @@ const Calculator = (props) => {
           >
             Subdivision
           </SelectTypeButton>
+          <SelectTypeButton
+            handleSelectedData={props.handleSelectedData}
+            selectedData={props.selectedData}
+            value="barCount"
+          >
+            Bar Count
+          </SelectTypeButton>
         </div>
         <div className="number-buttons-container">
           <div className="row">
-            <NumberButton addToDisplay={props.addToDisplay}>7</NumberButton>
-            <NumberButton addToDisplay={props.addToDisplay}>8</NumberButton>
-            <NumberButton addToDisplay={props.addToDisplay}>9</NumberButton>
+            <CalculatorButton addToDisplay={props.addToDisplay}>7</CalculatorButton>
+            <CalculatorButton addToDisplay={props.addToDisplay}>8</CalculatorButton>
+            <CalculatorButton addToDisplay={props.addToDisplay}>9</CalculatorButton>
           </div>
           <div className="row">
-            <NumberButton addToDisplay={props.addToDisplay}>4</NumberButton>
-            <NumberButton addToDisplay={props.addToDisplay}>5</NumberButton>
-            <NumberButton addToDisplay={props.addToDisplay}>6</NumberButton>
+            <CalculatorButton addToDisplay={props.addToDisplay}>4</CalculatorButton>
+            <CalculatorButton addToDisplay={props.addToDisplay}>5</CalculatorButton>
+            <CalculatorButton addToDisplay={props.addToDisplay}>6</CalculatorButton>
           </div>
           <div className="row">
-            <NumberButton addToDisplay={props.addToDisplay}>1</NumberButton>
-            <NumberButton addToDisplay={props.addToDisplay}>2</NumberButton>
-            <NumberButton addToDisplay={props.addToDisplay}>3</NumberButton>
+            <CalculatorButton addToDisplay={props.addToDisplay}>1</CalculatorButton>
+            <CalculatorButton addToDisplay={props.addToDisplay}>2</CalculatorButton>
+            <CalculatorButton addToDisplay={props.addToDisplay}>3</CalculatorButton>
           </div>
           <div className="row">
-            <NumberButton addToDisplay={props.handleClear}>C</NumberButton>
-            <NumberButton addToDisplay={props.addToDisplay}>0</NumberButton>
-            <DeleteButton handleDelete={props.handleDelete}>Del</DeleteButton>
+            <CalculatorButton addToDisplay={props.addToDisplay}>/</CalculatorButton>
+            <CalculatorButton addToDisplay={props.addToDisplay}>0</CalculatorButton>
+            <CalculatorButton addToDisplay={props.handleDelete}>Del</CalculatorButton>
           </div>
+          <ClearButton handleClear={props.handleClear}>Clear</ClearButton>
         </div>
         <div className="rhythmic-unit-container">
           <RhythmicUnitButton

@@ -1,39 +1,35 @@
 import React, { useState } from "react"
 import _ from "lodash"
 
-import validateInput from "../../services/validateInput.js"
-import getOverallStartingBeat from "../../services/getOverallStartingBeat.js"
-import getStartingBeat from "../../services/getStartingBeat.js"
-import getStartingSubBeat from "../../services/getStartingSubBeat.js"
+import mesuggahInputValidation from "../../../services/mesuggahInputValidation.js"
 
 import Calculator from "./Calculator.js"
 import GoButton from "./GoButton.js"
 import Instructions from "./Instructions.js"
 
-const LandingPage = () => {
+const MesuggahMainPage = () => {
   const [data, setData] = useState({
-    phrase: "",
-    timeCycle: "",
-    gap: "",
+    timeSignature: "",
     subdivision: "",
+    phrase: "",
+    barCount: "",
   })
   const [selectedData, setSelectedData] = useState()
   const [selectedSubdivision, setSelectedSubdivision] = useState({
     unitName: "",
     image: "",
   })
-  const [tihaiStart, setTihaiStart] = useState({
-    overallBeat: "",
-    beat: "",
-    subBeat: "",
+  const [result, setResult] = useState({
+    fullReps: "",
+    remainder: "",
   })
   const [errors, setErrors] = useState({})
 
   const addToDisplay = (number) => {
     if (
+      selectedData === "timeSignature" ||
       selectedData === "phrase" ||
-      selectedData === "timeCycle" ||
-      selectedData === "gap"
+      selectedData === "barCount"
     ) {
       setData({
         ...data,
@@ -51,9 +47,9 @@ const LandingPage = () => {
 
   const handleKeyPress = (event) => {
     if (
+      selectedData === "timeSignature" ||
       selectedData === "phrase" ||
-      selectedData === "timeCycle" ||
-      selectedData === "gap"
+      selectedData === "barCount"
     ) {
       if (Number.isInteger(parseInt(event.key))) {
         addToDisplay(event.key)
@@ -99,10 +95,10 @@ const LandingPage = () => {
 
   const handleClear = () => {
     setData({
-      phrase: "",
-      timeCycle: "",
-      gap: "",
+      timeSignature: "",
       subdivision: "",
+      phrase: "",
+      barCount: "",
     })
     setSelectedData()
     setSelectedSubdivision({
@@ -110,7 +106,7 @@ const LandingPage = () => {
       image: "",
     })
     setErrors({})
-    setTihaiStart({
+    setResult({
       overallBeat: "",
       beat: "",
       subBeat: "",
@@ -118,10 +114,11 @@ const LandingPage = () => {
   }
 
   const validateSubmission = () => {
-    let submitErrors = validateInput(
+    let submitErrors = mesuggahInputValidation(
+      data.timeSignature,
+      data.subdivision,
       data.phrase,
-      data.timeCycle,
-      data.subdivision
+      data.barCount
     )
 
     setErrors(submitErrors)
@@ -131,23 +128,10 @@ const LandingPage = () => {
 
   const getResult = () => {
     if (validateSubmission()) {
-      const tihaiOverallBeat = getOverallStartingBeat(
-        data.phrase,
-        data.gap,
-        data.timeCycle,
-        data.subdivision
-      )
-      const tihaiBeat = getStartingBeat(tihaiOverallBeat, data.subdivision)
-      const tihaiSubBeat = getStartingSubBeat(
-        tihaiOverallBeat,
-        data.subdivision
-      )
-
       setSelectedData("result")
-      setTihaiStart({
-        overallBeat: tihaiOverallBeat,
-        beat: Math.floor(tihaiBeat),
-        subBeat: tihaiSubBeat,
+      setResult({
+        fullReps: data.phrase + 2,
+        remainder: data.barCount + 1,
       })
     }
   }
@@ -163,7 +147,8 @@ const LandingPage = () => {
         selectedSubdivision={selectedSubdivision}
         handleSelectedSubdivision={handleSelectedSubdivision}
         handleDelete={handleDelete}
-        overallStartingBeat={tihaiStart.overallBeat}
+        fullReps={result.fullReps}
+        remainder={result.remainder}
         data={data}
         handleClear={handleClear}
       />
@@ -172,13 +157,12 @@ const LandingPage = () => {
         <Instructions
           selectedData={selectedData}
           errors={errors}
-          overallStartingBeat={tihaiStart.overallBeat}
-          startingBeat={tihaiStart.beat}
-          startingSubBeat={tihaiStart.subBeat}
+          fullReps={result.fullReps}
+          remainder={result.remainder}
         />
       </div>
     </div>
   )
 }
 
-export default LandingPage
+export default MesuggahMainPage
