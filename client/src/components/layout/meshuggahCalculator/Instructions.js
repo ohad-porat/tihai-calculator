@@ -25,23 +25,13 @@ const Instructions = (props) => {
       </div>
     )
   } else if (props.selectedData === "result") {
-    let tihaiStartMessage
-    if (props.overallStartingBeat === 1) {
-      tihaiStartMessage = `The tihai starts on beat ${props.startingBeat}.`
-    } else if (props.startingSubBeat === 0) {
-      tihaiStartMessage = `The tihai starts on beat ${
-        props.startingBeat
-      }. Count ${props.overallStartingBeat - 1} and then start.`
-    } else {
-      tihaiStartMessage = `The tihai starts ${props.startingSubBeat} ${
-        props.startingSubBeat === 1 ? "sub-beat" : "sub-beats"
-      } after beat ${props.startingBeat}. Count ${
-        props.overallStartingBeat - 1
-      } and then start.`
-    }
-
     header = ""
-    body = <div className="result-text">{tihaiStartMessage}</div>
+    body = (
+      <div className="result-text">
+        This section can contain {props.fullReps} amount of full reps of the phrase you choose, and
+        this leaves you a remainder of {props.remainder}.
+      </div>
+    )
   } else {
     let textByData = meshuggahInstructionsText.find(
       (element) => element.value === props.selectedData

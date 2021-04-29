@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import _ from "lodash"
 
 import meshuggahInputValidation from "../../../services/meshuggahInputValidation.js"
+import getTotalAmountOfBeats from "../../../services/getTotalAmountOfBeats.js"
 
 import Calculator from "./Calculator.js"
 import GoButton from "./GoButton.js"
@@ -128,10 +129,19 @@ const MeshuggahMainPage = () => {
 
   const getResult = () => {
     if (validateSubmission()) {
+      const phrase = parseInt(data.phrase)
+      const totalAmountOfBeats = getTotalAmountOfBeats(
+        data.timeSignature,
+        data.barCount,
+        data.subdivision
+      )
+      const fullRepsResult = Math.floor(totalAmountOfBeats / phrase)
+      const remainderResult = totalAmountOfBeats % phrase
+
       setSelectedData("result")
       setResult({
-        fullReps: data.phrase + 2,
-        remainder: data.barCount + 1,
+        fullReps: fullRepsResult,
+        remainder: remainderResult,
       })
     }
   }
