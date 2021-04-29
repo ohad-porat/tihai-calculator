@@ -28,8 +28,8 @@ const Instructions = (props) => {
     header = ""
     body = (
       <div className="result-text">
-        This section can contain {props.fullReps} amount of full reps of the phrase you choose, and
-        this leaves you a remainder of {props.remainder}.
+        This section contains {props.fullReps} full {props.fullReps === 1 ? "rep" : "reps"} of the
+        phrase and a remainder of {props.remainder} beats.
       </div>
     )
   } else {
