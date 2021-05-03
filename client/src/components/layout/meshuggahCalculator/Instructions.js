@@ -1,6 +1,8 @@
 import React from "react"
 import _ from "lodash"
 
+import meshuggahLogo from "../../../assets/images/meshuggahLogo.png"
+
 import meshuggahInstructionsText from "../../../constants/meshuggahInstructionsText.js"
 
 import ErrorList from "../ErrorList"
@@ -9,7 +11,11 @@ const Instructions = (props) => {
   let header
   let body
   if (props.selectedData === undefined || props.selectedData === "") {
-    header = "The Meshuggah Calculator"
+    header = (
+      <>
+        The <img src={meshuggahLogo} alt="Meshuggah Logo" className="meshuggah-logo" /> Calculator
+      </>
+    )
     body = (
       <>
         <div className="welcome-message first-paragraph">Paragraph 1</div>

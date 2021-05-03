@@ -46,3 +46,11 @@
   width: 357px;
   border-radius: 30px;
 }
+
+.select-button.meshuggah {
+background-color: $blue;
+}
+
+.select-button.meshuggah:hover {
+  background-color: $pink;
+}

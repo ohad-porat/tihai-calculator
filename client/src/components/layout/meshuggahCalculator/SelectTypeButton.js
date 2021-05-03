@@ -16,7 +16,7 @@ const SelectTypeButton = (props) => {
 
   return (
     <div
-      className={`button select-button ${highlightClass}`}
+      className={`button select-button meshuggah ${highlightClass}`}
       onClick={handleClickButton}
     >
       {props.children}

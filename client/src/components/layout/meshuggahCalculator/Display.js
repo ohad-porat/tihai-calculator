@@ -2,7 +2,7 @@ import React from "react"
 
 const Display = (props) => {
   return (
-    <div className="display">
+    <div className="display meshuggah">
       <div className="data-container meshuggah-calc">
         <div className="data-item meshuggah-calc">
           TS-&nbsp;<span className="digit">{props.data.timeSignature}</span>
