@@ -87,6 +87,7 @@ const Calculator = (props) => {
             addSubdivision={props.addSubdivision}
             handleSelectedData={props.handleSelectedData}
             handleSelectedSubdivision={props.handleSelectedSubdivision}
+            timeSignature={props.data.timeSignature}
             value="1"
             image={quarter}
             unitName="quarter note"
@@ -95,6 +96,7 @@ const Calculator = (props) => {
             addSubdivision={props.addSubdivision}
             handleSelectedData={props.handleSelectedData}
             handleSelectedSubdivision={props.handleSelectedSubdivision}
+            timeSignature={props.data.timeSignature}
             value="2"
             image={eighth}
             unitName="eighth note"
@@ -103,6 +105,7 @@ const Calculator = (props) => {
             addSubdivision={props.addSubdivision}
             handleSelectedData={props.handleSelectedData}
             handleSelectedSubdivision={props.handleSelectedSubdivision}
+            timeSignature={props.data.timeSignature}
             value="3"
             image={tuplet}
             unitName="tuplets"
@@ -111,6 +114,7 @@ const Calculator = (props) => {
             addSubdivision={props.addSubdivision}
             handleSelectedData={props.handleSelectedData}
             handleSelectedSubdivision={props.handleSelectedSubdivision}
+            timeSignature={props.data.timeSignature}
             value="4"
             image={sixteenth}
             unitName="sixteenth note"
@@ -119,6 +123,7 @@ const Calculator = (props) => {
             addSubdivision={props.addSubdivision}
             handleSelectedData={props.handleSelectedData}
             handleSelectedSubdivision={props.handleSelectedSubdivision}
+            timeSignature={props.data.timeSignature}
             value="5"
             image={quintuplets}
             unitName="quintuplets"
@@ -127,6 +132,7 @@ const Calculator = (props) => {
             addSubdivision={props.addSubdivision}
             handleSelectedData={props.handleSelectedData}
             handleSelectedSubdivision={props.handleSelectedSubdivision}
+            timeSignature={props.data.timeSignature}
             value="6"
             image={sextuplets}
             unitName="sextuplets"
@@ -135,6 +141,7 @@ const Calculator = (props) => {
             addSubdivision={props.addSubdivision}
             handleSelectedData={props.handleSelectedData}
             handleSelectedSubdivision={props.handleSelectedSubdivision}
+            timeSignature={props.data.timeSignature}
             value="7"
             image={septuplets}
             unitName="septuplets"
@@ -143,6 +150,7 @@ const Calculator = (props) => {
             addSubdivision={props.addSubdivision}
             handleSelectedData={props.handleSelectedData}
             handleSelectedSubdivision={props.handleSelectedSubdivision}
+            timeSignature={props.data.timeSignature}
             value="8"
             image={thirtyTwo}
             unitName="thirty-second note"

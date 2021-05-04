@@ -49,3 +49,8 @@
 .eighth {
   margin-top: 10px;
 }
+
+.rhythmic-unit.grey-out {
+  background-color: $dark-grey;
+  cursor: not-allowed;
+}
