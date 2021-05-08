@@ -10,7 +10,7 @@ import Calculator from "./Calculator.js"
 import GoButton from "./GoButton.js"
 import Instructions from "./Instructions.js"
 
-const TihaiLandingPage = () => {
+const TihaiMainPage = () => {
   const [data, setData] = useState({
     phrase: "",
     timeCycle: "",
@@ -181,4 +181,4 @@ const TihaiLandingPage = () => {
   )
 }
 
-export default TihaiLandingPage
+export default TihaiMainPage

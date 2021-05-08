@@ -1,31 +1,22 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import { hot } from "react-hot-loader/root"
 
-import getCurrentUser from "../services/getCurrentUser"
 import "../assets/scss/main.scss"
 import TopBar from "./layout/TopBar"
-import LandingPage from "./layout/tihaiCalculator/TihaiLandingPage"
+import TihaiMainPage from "./layout/tihaiCalculator/TihaiMainPage"
 import AboutUs from "./layout/AboutUs"
 import WhatIsTihai from "./layout/WhatIsTihai"
+import LandingPage from "./layout/LandingPage"
 import MeshuggahMainPage from "./layout/meshuggahCalculator/MeshuggahMainPage"
 
-const App = (props) => {
-  const [currentUser, setCurrentUser] = useState(undefined)
-  useEffect(() => {
-    getCurrentUser()
-      .then((user) => {
-        setCurrentUser(user)
-      })
-      .catch(() => {
-        setCurrentUser(null)
-      })
-  }, [])
+const App = () => {
   return (
     <Router>
-      <TopBar user={currentUser} />
+      <TopBar />
       <Switch>
         <Route exact path="/" component={LandingPage} />
+        <Route exact path="/tihai-calculator" component={TihaiMainPage} />
         <Route exact path="/about-us" component={AboutUs} />
         <Route exact path="/what-is-tihai" component={WhatIsTihai} />
         <Route exact path="/meshuggah-calculator" component={MeshuggahMainPage} />
