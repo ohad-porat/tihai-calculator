@@ -1,21 +1,30 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
 const TopBar = () => {
-
   return (
     <div className="top-bar">
       <div className="top-bar-left">
         <ul className="menu">
-          <li className="menu-text"><Link to="/" className="home-link">Tihai GPS Calculator</Link></li>
-          <li>
-          <Link to="/what-is-tihai">What Is Tihai?</Link>
+          <li className="menu-text">
+            <NavLink to="/home" activeClassName="active">
+              Tihai GPS Calculator
+            </NavLink>
           </li>
           <li>
-          <Link to="/meshuggah-calculator">Meshuggah Calculator</Link>
+            <NavLink to="/what-is-tihai" activeClassName="active">
+              What Is Tihai?
+            </NavLink>
           </li>
           <li>
-            <Link to="/about-us">About Us</Link>
+            <NavLink to="/meshuggah-calculator" activeClassName="active">
+              Meshuggah Calculator
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/about-us" activeClassName="active">
+              About Us
+            </NavLink>
           </li>
         </ul>
       </div>
