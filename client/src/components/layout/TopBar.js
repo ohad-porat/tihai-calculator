@@ -7,7 +7,7 @@ const TopBar = () => {
       <div className="top-bar-left">
         <ul className="menu">
           <li className="menu-text">
-            <NavLink to="/" activeClassName="active">
+            <NavLink to="/home" activeClassName="active">
               Tihai GPS Calculator
             </NavLink>
           </li>

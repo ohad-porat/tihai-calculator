@@ -5,6 +5,7 @@ const router = new express.Router()
 
 const clientRoutes = [
   "/",
+  "/home",
   "/about-us",
   "/what-is-tihai",
   "/meshuggah-calculator",

@@ -14,7 +14,7 @@ const App = () => {
     <Router>
       <TopBar />
       <Switch>
-        <Route exact path="/" component={LandingPage} />
+        <Route exact path="/home" component={LandingPage} />
         <Route exact path="/about-us" component={AboutUs} />
         <Route exact path="/what-is-tihai" component={WhatIsTihai} />
         <Route exact path="/meshuggah-calculator" component={MeshuggahMainPage} />
