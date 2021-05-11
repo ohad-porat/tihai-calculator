@@ -18,9 +18,9 @@ const Instructions = (props) => {
     )
     body = (
       <>
-        <div className="welcome-message first-paragraph">Paragraph 1</div>
-        <div className="welcome-message second-paragraph">Paragraph 2</div>
-        <div className="welcome-message third-paragraph">Paragraph 3</div>
+        <div className="welcome-message first-paragraph">The Meshuggah calculator is here to help us with annoying math segments  we want to play but are too lazy to calculate.</div>
+        <div className="welcome-message second-paragraph">This calculator will calculate how many phrases can a certain section contain and is a great tool for composing and writing Meshuggah style riffs!</div>
+        <div className="welcome-message third-paragraph">To see some examples, click <a href="https://www.youtube.com/watch?v=LGB-7viJrv0&t=873s" target="_blank">here</a></div>
       </>
     )
   } else if (props.selectedData === "errors") {
