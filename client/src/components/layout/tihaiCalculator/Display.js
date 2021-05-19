@@ -14,12 +14,7 @@ const Display = (props) => {
           G-&nbsp;<span className="digit">{props.data.gap}</span>
         </div>
         <div className="data-item">
-          S-
-          <img
-            src={props.subdivision.image}
-            alt={props.subdivision.unitName}
-            className={`subdivision-display ${props.subdivision.unitName}`}
-          />
+          S-&nbsp;Beat <span className="digit">/{props.data.subdivision}</span>
         </div>
       </div>
       <div className="starting-beat">

@@ -1,14 +1,5 @@
 import React from "react"
 
-import quarter from "../../../assets/images/rhythmicUnits/quarter.png"
-import eighth from "../../../assets/images/rhythmicUnits/eighth.png"
-import tuplet from "../../../assets/images/rhythmicUnits/tuplets.png"
-import sixteenth from "../../../assets/images/rhythmicUnits/16th.png"
-import quintuplets from "../../../assets/images/rhythmicUnits/quintuplets.png"
-import sextuplets from "../../../assets/images/rhythmicUnits/sextuplets.png"
-import septuplets from "../../../assets/images/rhythmicUnits/septuplets.png"
-import thirtyTwo from "../../../assets/images/rhythmicUnits/32nd.png"
-
 import CalculatorButton from "./CalculatorButton.js"
 import SelectTypeButton from "./SelectTypeButton.js"
 import Display from "./Display.js"
@@ -85,7 +76,6 @@ const Calculator = (props) => {
             handleSelectedData={props.handleSelectedData}
             handleSelectedSubdivision={props.handleSelectedSubdivision}
             value="1"
-            image={quarter}
             unitName="quarter note"
           ></RhythmicUnitButton>
           <RhythmicUnitButton
@@ -93,7 +83,6 @@ const Calculator = (props) => {
             handleSelectedData={props.handleSelectedData}
             handleSelectedSubdivision={props.handleSelectedSubdivision}
             value="2"
-            image={eighth}
             unitName="eighth note"
           ></RhythmicUnitButton>
           <RhythmicUnitButton
@@ -101,7 +90,6 @@ const Calculator = (props) => {
             handleSelectedData={props.handleSelectedData}
             handleSelectedSubdivision={props.handleSelectedSubdivision}
             value="3"
-            image={tuplet}
             unitName="tuplets"
           ></RhythmicUnitButton>
           <RhythmicUnitButton
@@ -109,7 +97,6 @@ const Calculator = (props) => {
             handleSelectedData={props.handleSelectedData}
             handleSelectedSubdivision={props.handleSelectedSubdivision}
             value="4"
-            image={sixteenth}
             unitName="sixteenth note"
           ></RhythmicUnitButton>
           <RhythmicUnitButton
@@ -117,7 +104,6 @@ const Calculator = (props) => {
             handleSelectedData={props.handleSelectedData}
             handleSelectedSubdivision={props.handleSelectedSubdivision}
             value="5"
-            image={quintuplets}
             unitName="quintuplets"
           ></RhythmicUnitButton>
           <RhythmicUnitButton
@@ -125,7 +111,6 @@ const Calculator = (props) => {
             handleSelectedData={props.handleSelectedData}
             handleSelectedSubdivision={props.handleSelectedSubdivision}
             value="6"
-            image={sextuplets}
             unitName="sextuplets"
           ></RhythmicUnitButton>
           <RhythmicUnitButton
@@ -133,7 +118,6 @@ const Calculator = (props) => {
             handleSelectedData={props.handleSelectedData}
             handleSelectedSubdivision={props.handleSelectedSubdivision}
             value="7"
-            image={septuplets}
             unitName="septuplets"
           ></RhythmicUnitButton>
           <RhythmicUnitButton
@@ -141,7 +125,6 @@ const Calculator = (props) => {
             handleSelectedData={props.handleSelectedData}
             handleSelectedSubdivision={props.handleSelectedSubdivision}
             value="8"
-            image={thirtyTwo}
             unitName="thirty-second note"
           ></RhythmicUnitButton>
         </div>
