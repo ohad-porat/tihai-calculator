@@ -8,6 +8,16 @@
   transition: background-color 0.25s ease-out;
 }
 
+.rhythmic-unit.tihai {
+  width: 65px;
+  height: 45px;
+  text-align: center;
+  display: inherit;
+  margin: 9px 5px;
+  font-size: 17px;
+  font-weight: bold;
+}
+
 .rhythmic-unit:hover {
   cursor: pointer;
   background-color: $pink;

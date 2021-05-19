@@ -3,16 +3,13 @@ import React from "react"
 const RhythmicUnitButton = (props) => {
   const handleClickButton = () => {
     props.handleSelectedData("subdivision")
-    props.handleSelectedSubdivision(props.unitName, props.image)
+    props.handleSelectedSubdivision(props.unitName)
     props.addSubdivision(props.value)
   }
 
   return (
-    <div
-      className={`rhythmic-unit ${props.unitName}`}
-      onClick={handleClickButton}
-    >
-      <img src={props.image} alt={props.unitName} />
+    <div className={`rhythmic-unit tihai ${props.value}`} onClick={handleClickButton}>
+      Beat /{props.value}
     </div>
   )
 }
