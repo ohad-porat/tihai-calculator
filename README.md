@@ -1,7 +1,7 @@
 ## The Tihai Calculator
 The Tihai Calculator does exactly what it sounds like, it helps you calculate starting points for Tihais, a polyrhythmic technique found in Indian classical music.
 
-Check out our website at https://tihai-calculator.herokuapp.com/
+Check out our website at http://time-consuming.com/
 
 ## Setup 
 - Clone this repository
