@@ -90,8 +90,8 @@ module.exports = {
     extensions: ["*", ".js", ".scss"],
   },
   output: {
-    path: path.resolve(__dirname, "../server/public/dist"),
-    publicPath: "/dist/",
+    path: path.resolve(__dirname, "dist"),
+    publicPath: "/",
     filename: "bundle.js",
   },
   devServer: {
