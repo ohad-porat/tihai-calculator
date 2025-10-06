@@ -1,23 +1,28 @@
 {
-  "type": "module",
+  "name": "new",
+  "version": "0.1.0",
   "private": true,
-  "workspaces": [
-    "server",
-    "client",
-    "e2e"
-  ],
   "scripts": {
-    "build:client": "yarn workspace tihai-calculator-client build",
-    "dev": "yarn workspace tihai-calculator-server dev",
-    "dev:debug": "yarn workspace tihai-calculator-server dev:debug",
-    "heroku-postbuild": "yarn workspace tihai-calculator-client build",
-    "start": "yarn workspace tihai-calculator-server start",
-    "dev:cypress": "yarn workspace tihai-calculator-server dev:e2e",
-    "e2e:open": "yarn workspace tihai-calculator-e2e e2e:open",
-    "e2e:run": "yarn workspace tihai-calculator-e2e e2e:run"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
   },
-  "engines": {
-    "node": "^14.15",
-    "yarn": "1.22.10"
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.1.0",
+    "foundation-sites": "^6.9.0",
+    "next": "15.5.4",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "sass": "^1.93.2"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.4",
+    "typescript": "^5"
   }
 }
