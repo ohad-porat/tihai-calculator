@@ -18,7 +18,7 @@ const Instructions: React.FC<InstructionsProps> = ({
     body = (
       <>
         <div className="welcome-message first-paragraph">
-          "The Tihai is the coolest S*** invented since the Macarena". I think it was Isaac Newton
+          &quot;The Tihai is the coolest S*** invented since the Macarena&quot;. I think it was Isaac Newton
           who said that.
         </div>
         <div className="welcome-message second-paragraph">
@@ -26,7 +26,7 @@ const Instructions: React.FC<InstructionsProps> = ({
           club meeting.
         </div>
         <div className="welcome-message third-paragraph">
-          If you're tired of calculating Tihai starting points, this is for you. Just dial in all
+          If you&apos;re tired of calculating Tihai starting points, this is for you. Just dial in all
           the info needed, and let us do the work for you!
         </div>
       </>
