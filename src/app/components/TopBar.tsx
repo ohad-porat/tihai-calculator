@@ -12,16 +12,6 @@ const TopBar = () => {
       <div className="top-bar-left">
         <ul className="menu">
           <li className="menu-text">
-            <Link href="/" className={pathname === "/" ? "active" : ""}>
-              Tihai Calculator
-            </Link>
-          </li>
-          <li>
-            <Link href="/what-is-tihai" className={pathname === "/what-is-tihai" ? "active" : ""}>
-              What Is Tihai?
-            </Link>
-          </li>
-          <li>
             <Link href="/meshuggah-calculator" className={pathname === "/meshuggah-calculator" ? "active" : ""}>
               Meshuggah Calculator
             </Link>

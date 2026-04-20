@@ -1,5 +1,5 @@
-import TihaiLandingPage from "./components/tihaiCalculator/TihaiLandingPage";
+import MeshuggahLandingPage from "./meshuggah-calculator/components/MeshuggahLandingPage";
 
 export default function HomePage() {
-  return <TihaiLandingPage />;
+  return <MeshuggahLandingPage />;
 }
